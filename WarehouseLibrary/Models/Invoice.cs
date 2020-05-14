@@ -4,10 +4,9 @@ using System.Text;
 
 namespace WarehouseLibrary.Models
 {
-    public struct Data_struct
+    public class Invoice
     {
-        public int Month;
-        public int Day;
-        public int Year;
+        public DateTime Date { set; get; }
+        public List<Product> Products;
     }
 }

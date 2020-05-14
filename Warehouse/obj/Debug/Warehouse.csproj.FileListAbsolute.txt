@@ -1,0 +1,8 @@
+C:\Users\38099\Desktop\Warehouse\Warehouse\bin\Debug\Warehouse.exe.config
+C:\Users\38099\Desktop\Warehouse\Warehouse\bin\Debug\Warehouse.exe
+C:\Users\38099\Desktop\Warehouse\Warehouse\bin\Debug\Warehouse.pdb
+C:\Users\38099\Desktop\Warehouse\Warehouse\obj\Debug\Warehouse.csprojAssemblyReference.cache
+C:\Users\38099\Desktop\Warehouse\Warehouse\obj\Debug\Warehouse.Properties.Resources.resources
+C:\Users\38099\Desktop\Warehouse\Warehouse\obj\Debug\Warehouse.csproj.GenerateResource.cache
+C:\Users\38099\Desktop\Warehouse\Warehouse\obj\Debug\Warehouse.exe
+C:\Users\38099\Desktop\Warehouse\Warehouse\obj\Debug\Warehouse.pdb

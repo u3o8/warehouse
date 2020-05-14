@@ -4,8 +4,8 @@ using System.Text;
 
 namespace WarehouseLibrary.Models
 {
-    public class Customer : User
+    public class Purchase_Invoice
     {
-        public string Adress { set; get; }
+
     }
 }

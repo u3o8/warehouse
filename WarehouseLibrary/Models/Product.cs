@@ -11,7 +11,7 @@ namespace WarehouseLibrary.Models
         public string Unit { set; get; }
         public decimal Price { set; get; }
         public string Amount { set; get; }
-        public Data_struct Data { set; get; }
+        public DateTime Date { set; get; }
 
     }
 }
