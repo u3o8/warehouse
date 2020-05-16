@@ -4,14 +4,15 @@ using System.Text;
 
 namespace WarehouseLibrary.Models
 {
+    [Serializable]
     public class Product
     {
         public string Name { set; get; }
-        public string Id { set; get; } //Артикул друшими словами
+        public int Id { set; get; } //Артикул друgими словами
         public string Unit { set; get; }
         public decimal Price { set; get; }
         public string Amount { set; get; }
-        public DateTime Date { set; get; }
+        public DateTime DateTime { set; get; }
 
     }
 }

@@ -4,6 +4,7 @@ using System.Text;
 
 namespace WarehouseLibrary.Models
 {
+    [Serializable]
     public class Purchase_Invoice
     {
 

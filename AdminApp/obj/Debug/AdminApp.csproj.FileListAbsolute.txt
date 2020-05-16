@@ -1,0 +1,11 @@
+C:\Users\38099\Desktop\Warehouse\AdminApp\obj\Debug\AdminApp.csprojAssemblyReference.cache
+C:\Users\38099\Desktop\Warehouse\AdminApp\obj\Debug\AdminApp.Properties.Resources.resources
+C:\Users\38099\Desktop\Warehouse\AdminApp\obj\Debug\AdminApp.csproj.GenerateResource.cache
+C:\Users\38099\Desktop\Warehouse\AdminApp\bin\Debug\AdminApp.exe.config
+C:\Users\38099\Desktop\Warehouse\AdminApp\bin\Debug\AdminApp.exe
+C:\Users\38099\Desktop\Warehouse\AdminApp\bin\Debug\AdminApp.pdb
+C:\Users\38099\Desktop\Warehouse\AdminApp\bin\Debug\WarehouseLibrary.dll
+C:\Users\38099\Desktop\Warehouse\AdminApp\bin\Debug\WarehouseLibrary.pdb
+C:\Users\38099\Desktop\Warehouse\AdminApp\obj\Debug\AdminApp.csproj.CopyComplete
+C:\Users\38099\Desktop\Warehouse\AdminApp\obj\Debug\AdminApp.exe
+C:\Users\38099\Desktop\Warehouse\AdminApp\obj\Debug\AdminApp.pdb
