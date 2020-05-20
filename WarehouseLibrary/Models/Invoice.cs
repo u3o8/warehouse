@@ -8,6 +8,6 @@ namespace WarehouseLibrary.Models
     public class Invoice
     {
         public DateTime DateTime { set; get; }
-        public List<Product> Products;
+        public List<Portion> Portions { set; get; }
     }
 }

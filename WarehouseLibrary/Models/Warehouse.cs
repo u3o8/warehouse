@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using WarehouseLibrary.DAL;
 
 namespace WarehouseLibrary.Models
 {
@@ -22,6 +23,28 @@ namespace WarehouseLibrary.Models
             Orders = new List<Order>();
         }
 
+        //Methods
 
+        //Регистрация клиента
+        public void Registration(Customer new_customer) {
+            Customers.Add(new_customer);
+        }
+
+        //Учет поставки
+        public void Supply(Purchase_Invoice new_supply) {
+            Purchase_Invoices.Add(new_supply);
+            List<Product> new_products = new_supply.Product_from_Supply();
+            Products.AddRange(new_products);
+        }
+        //////////////////////
+        public void Save()
+        {
+            new Dao(this).Save();
+        }
+
+        public void Load()
+        {
+            new Dao(this).Load();
+        }
     }
 }

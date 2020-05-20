@@ -5,7 +5,7 @@ using System.Text;
 namespace WarehouseLibrary.Models
 {
     [Serializable]
-    public class Sales_Invoice
+    public class Sales_Invoice : Invoice
     {
         Customer Customer { get; set; }
     }
