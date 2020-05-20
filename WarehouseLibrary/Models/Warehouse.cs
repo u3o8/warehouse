@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using WarehouseLibrary.DAL;
+using WarehouseLibrary.My_Exceptions;
 
 namespace WarehouseLibrary.Models
 {
@@ -25,16 +26,36 @@ namespace WarehouseLibrary.Models
 
         //Methods
 
+        //Подтверждение пользователя,переместилось сюда
+        //в отличии от написанного в спецификации, однако
+        //в классе перегружен метод сравнения
+        public bool Validation(Customer enter) {
+            foreach (Customer customer in Customers) //перебор всех пользовтелей
+                if (customer.Equals(enter)) //если нашли пользователя, то происходит вход в учетную запись
+                    return true;
+            return false; //если не нашли в нашем списке подходящего пользовтеля, то что-то ввели не так
+        }
+
         //Регистрация клиента
         public void Registration(Customer new_customer) {
-            Customers.Add(new_customer);
+            foreach (Customer customer in Customers) //перебор всех пользовтелей
+                if (customer.Login == new_customer.Login) //если нашли данный логин, то он занят
+                    throw new LoginException("Неверный логин!"); //потом словим данное исключение
+            Customers.Add(new_customer); //если нет такого логина, то спокойно регистрируем пользователя
         }
 
         //Учет поставки
         public void Supply(Purchase_Invoice new_supply) {
-            Purchase_Invoices.Add(new_supply);
-            List<Product> new_products = new_supply.Product_from_Supply();
-            Products.AddRange(new_products);
+            Purchase_Invoices.Add(new_supply); //добавляем нашу поставку
+            List<Product> new_products = new_supply.Product_from_Supply(); //для добавления в магазин извлекаем продукты из поставки
+            //мы могли бы просто добавить продукты, однако давайте подумаем о том, что определенный продукт может быть уже в магазине
+            //тогда нужно будет увеличить количество, а не иметь два разных продукта
+            foreach (Product new_product in new_products) {
+                foreach (Product one in Products) {
+                    //Я НА ЭТОМ ОСТАНОВИЛАСЬ, ДОДЕЛАЮ
+                }
+
+            }
         }
         //////////////////////
         public void Save()

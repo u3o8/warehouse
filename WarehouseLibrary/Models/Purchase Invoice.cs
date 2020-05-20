@@ -12,10 +12,11 @@ namespace WarehouseLibrary.Models
             List<Product> new_products = new List<Product>();
             for (int i = 0; i < this.Portions.Count; ++i)
             {
+                //составляю новые продукты
                 Product temp = new Product()
                 {
-                    Name = this.Portions[i].Product.Name, //пока считаю продукт == порция, НО это пока
-                    Id = this.Portions[i].Product.Id, //длинное, потом сократим 
+                    Name = this.Portions[i].Product.Name, 
+                    Id = this.Portions[i].Product.Id, 
                     Unit = this.Portions[i].Product.Unit,
                     Price = this.Portions[i].Product.Price,
                     Amount = this.Portions[i].Amount
