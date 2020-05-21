@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WarehouseLibrary.Models;
+using WarehouseLibrary.My_Exceptions;
 
 namespace WarehouseTest
 {
     [TestClass]
-    public class UnitTest1
+    public class Test_Supply
     {
         [TestMethod]
         public void Test_Supply_Load_Save()
@@ -51,5 +52,76 @@ namespace WarehouseTest
 
 
         }
+
+        [TestMethod]
+        public void Test_Supply_the_same() {
+            const int n = 100;
+            Warehouse warehouse = new Warehouse();
+            List<Portion> test_portions = new List<Portion>(); //создаю тестовые порции, т.к. поставка порция + дата
+            for (int i = 0; i < n; i++)
+            {
+                //создаю продукт, который является частью класса порция
+                Product new_product = new Product()
+                {
+                    Id = 12345678,
+                    Name = $"Product 34",
+                    Price = 228,
+                    Unit = "kg"
+                };
+                //после этого создаю саму порцию
+                test_portions.Add(new Portion()
+                {
+                    Product = new_product,
+                    Amount = 5
+                });
+            }
+            warehouse.Supply(new Purchase_Invoice()
+            {
+                Portions = test_portions,
+                DateTime = DateTime.Now
+            });
+            Assert.AreEqual("Product 34", warehouse.Products[0].Name);
+            Assert.AreEqual(500, warehouse.Products[0].Amount);
+        }
     }
-}
+    [TestClass]
+    public class Test_User
+    {
+        [TestMethod]
+        public void Test_new_Users() {
+            Warehouse warehouse = new Warehouse();
+            const int n = 7;
+            List<Customer> test_customers = new List<Customer>();
+            for (int i = 0; i < n; i++)
+                warehouse.Registration(new Customer { Login = $"Customer{i}", Password = "123", Adress = "234@cust.com" });
+            Assert.AreEqual("Customer6", warehouse.Customers[6].Login);
+            Assert.AreEqual("Customer2", warehouse.Customers[2].Login);
+            Assert.AreEqual("123", warehouse.Customers[0].Password);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(LoginException),
+            "Invalid login!")]
+        public void Test_Exception() {
+            Warehouse warehouse = new Warehouse();
+            const int n = 7;
+            List<Customer> test_customers = new List<Customer>();
+            for (int i = 0; i < n; i++)
+                warehouse.Registration(new Customer { Login = $"Login", Password = "123", Adress = "l@cust.com" });
+        }
+
+        [TestMethod]
+        public void Test_validation() {
+            Warehouse warehouse = new Warehouse();
+            const int n = 2;
+            List<Customer> test_customers = new List<Customer>();
+            for (int i = 0; i < n; i++)
+                warehouse.Registration(new Customer { Login = $"Customer{i}", Password = "123", Adress = "234@cust.com" });
+            Assert.IsTrue(warehouse.Validation(new Customer { Login = "Customer0", Password = "123" }));
+            Assert.IsTrue(warehouse.Validation(new Customer { Login = "Customer1", Password = "123" }));
+            Assert.IsFalse(warehouse.Validation(new Customer { Login = "Customer0", Password = "143" }));
+            Assert.IsFalse(warehouse.Validation(new Customer { Login = "Customer33", Password = "123" }));
+        }
+    }
+
+ }

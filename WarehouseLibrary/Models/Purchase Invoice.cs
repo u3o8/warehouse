@@ -9,7 +9,7 @@ namespace WarehouseLibrary.Models
     {
         //Methods
         public List<Product> Product_from_Supply() {
-            List<Product> new_products = new List<Product>();
+            List<Product> new_products = new List<Product>(); //сюда мы поместим наши новые продукты
             for (int i = 0; i < this.Portions.Count; ++i)
             {
                 //составляю новые продукты

@@ -40,7 +40,7 @@ namespace WarehouseLibrary.Models
         public void Registration(Customer new_customer) {
             foreach (Customer customer in Customers) //перебор всех пользовтелей
                 if (customer.Login == new_customer.Login) //если нашли данный логин, то он занят
-                    throw new LoginException("Неверный логин!"); //потом словим данное исключение
+                    throw new LoginException("Invalid login!"); //потом словим данное исключение
             Customers.Add(new_customer); //если нет такого логина, то спокойно регистрируем пользователя
         }
 
@@ -51,12 +51,21 @@ namespace WarehouseLibrary.Models
             //мы могли бы просто добавить продукты, однако давайте подумаем о том, что определенный продукт может быть уже в магазине
             //тогда нужно будет увеличить количество, а не иметь два разных продукта
             foreach (Product new_product in new_products) {
-                foreach (Product one in Products) {
-                    //Я НА ЭТОМ ОСТАНОВИЛАСЬ, ДОДЕЛАЮ
+                bool key = false; //указывает, что товара на складе нет
+                foreach (Product temp in Products) {
+                    if (new_product.Equals(temp))
+                    {
+                        key = true; //указываем, что товар есть на складе, данный товар мы уже не будем добавлять
+                        temp.Amount += new_product.Amount; //если уже имеем данный продукт на складе, то просто меняем количество
+                        break;
+                    }
                 }
-
+                if (key == false)
+                    Products.Add(new_product); //тут добавляем
             }
         }
+
+
         //////////////////////
         public void Save()
         {
