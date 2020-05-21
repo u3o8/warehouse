@@ -9,11 +9,11 @@ namespace WarehouseLibrary.Models
     [Serializable]
     public class Warehouse
     {
+        public User User_now { private set; get; }
         public List<Product> Products { private set; get; }
         public List<Customer> Customers { private set; get; }
         public List<Sales_Invoice> Sales_Invoices { private set; get; }
         public List<Purchase_Invoice> Purchase_Invoices { private set; get; }
-        //Покупатели active будут, а пока так
         public List<Order> Orders { private set; get; }
         public Warehouse()
         {
@@ -23,6 +23,7 @@ namespace WarehouseLibrary.Models
             Purchase_Invoices = new List<Purchase_Invoice>();
             Orders = new List<Order>();
         }
+
 
         //Methods
 
@@ -47,7 +48,7 @@ namespace WarehouseLibrary.Models
         //Учет поставки
         public void Supply(Purchase_Invoice new_supply) {
             Purchase_Invoices.Add(new_supply); //добавляем нашу поставку
-            List<Product> new_products = new_supply.Product_from_Supply(); //для добавления в магазин извлекаем продукты из поставки
+            List<Product> new_products = new_supply.Product_from_Invoice(); //для добавления в магазин извлекаем продукты из поставки
             //мы могли бы просто добавить продукты, однако давайте подумаем о том, что определенный продукт может быть уже в магазине
             //тогда нужно будет увеличить количество, а не иметь два разных продукта
             foreach (Product new_product in new_products) {
@@ -65,6 +66,53 @@ namespace WarehouseLibrary.Models
             }
         }
 
+        //Создание заказа
+        public void New_Order(List<Portion> portion_for_order) {
+            Order new_order = new Order(portion_for_order, (Customer)User_now); //создаю конструктором
+            Orders.Add(new_order); //добавляю в заказы
+        }
+
+        public void Сonfirmation_of_order(Order target_order) {
+            Sales_Invoice temp = new Sales_Invoice (target_order.Portions, target_order.Customer); //создаем расходную накладную
+            //Проверяем хватает ли на складе продуктов
+            List<Product> check_products = temp.Product_from_Invoice(); //извлекаем продукты
+            bool key = true; //для понимания, можем принять заказ или нет
+            foreach (Product target_check_product in check_products){
+                bool find = false;
+                foreach (Product product_warehouse in Products)
+                {
+                    if (target_check_product.Equals(product_warehouse)) //Находим продукт в списке
+                    {
+                        find = true;
+                        if (product_warehouse.Amount < target_check_product.Amount) //Не хватает? Заказ принять не можем
+                            key = false;
+                        break;
+                    }
+                    if (find == false)
+                    { //Не нашли продукт? Не можем заказ принять
+                        key = false;
+                        break;
+                    }
+                }
+            }
+
+            if (key == false)
+                throw new OrderException("Order cannot be approved!"); //вырабатываем исключение
+            Sales_Invoices.Add(temp); //если можем одобрить заказ, то создаем накладную
+            //Изменяем количество продуктов
+            foreach (Product target_check_product in check_products)
+            {
+                foreach (Product product_warehouse in Products)
+                {
+                    if (target_check_product.Equals(product_warehouse)) //Находим продукт в списке
+                    {
+                        product_warehouse.Amount -= target_check_product.Amount; //изменяем количество
+                        break;
+                    }
+                }
+            }
+            Orders.Remove(target_order); //удаляем заказ, ибо мы его обслужили
+        }
 
         //////////////////////
         public void Save()
