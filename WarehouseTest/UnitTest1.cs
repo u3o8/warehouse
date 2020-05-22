@@ -32,10 +32,7 @@ namespace WarehouseTest
                     Amount = (i + 3) * 2
                 });
             }
-            warehouse.Supply(new Purchase_Invoice() {
-                Portions = test_portions,
-                DateTime = DateTime.Now
-            });
+            warehouse.Supply(new Purchase_Invoice(test_portions));
             Assert.AreEqual("Product0", warehouse.Products[0].Name);
             Assert.AreEqual("Product99", warehouse.Products[99].Name);
             Assert.AreEqual("Product22", warehouse.Products[22].Name);
@@ -75,11 +72,7 @@ namespace WarehouseTest
                     Amount = 5
                 });
             }
-            warehouse.Supply(new Purchase_Invoice()
-            {
-                Portions = test_portions,
-                DateTime = DateTime.Now
-            });
+            warehouse.Supply(new Purchase_Invoice(test_portions));
             Assert.AreEqual("Product 34", warehouse.Products[0].Name);
             Assert.AreEqual(500, warehouse.Products[0].Amount);
         }
