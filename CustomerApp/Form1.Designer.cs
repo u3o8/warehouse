@@ -1,4 +1,4 @@
-﻿namespace AdminApp
+﻿namespace CustomerApp
 {
     partial class Form1
     {

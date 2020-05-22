@@ -11,10 +11,10 @@ using WarehouseLibrary.Models;
 
 namespace AdminApp
 {
-    public partial class Form1 : Form
+    public partial class Home_Page : Form
     {
         //Warehouse warehouse;
-        public Form1()
+        public Home_Page()
         {
             InitializeComponent();
             //warehouse = new Warehouse();
