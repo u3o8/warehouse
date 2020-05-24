@@ -9,6 +9,7 @@ namespace WarehouseLibrary.Models
     [Serializable]
     public class Warehouse
     {
+        public Admin Admin { private set; get; }
         public User User_now { private set; get; }
         public List<Product> Products { private set; get; }
         public List<Customer> Customers { private set; get; }
@@ -17,6 +18,11 @@ namespace WarehouseLibrary.Models
         public List<Order> Orders { private set; get; }
         public Warehouse()
         {
+            //Стандартный логин и пароль админа. Создадим потом возможность изменять данные параметры
+            Admin = new Admin() {
+                Login = "admin",
+                Password = "admin",
+            };
             Products = new List<Product>();
             Customers = new List<Customer>();
             Sales_Invoices = new List<Sales_Invoice>();
@@ -30,10 +36,17 @@ namespace WarehouseLibrary.Models
         //Подтверждение пользователя,переместилось сюда
         //в отличии от написанного в спецификации, однако
         //в классе перегружен метод сравнения
-        public bool Validation(Customer enter) {
+        public bool Customer_Authentication(Customer enter) {
             foreach (Customer customer in Customers) //перебор всех пользовтелей
-                if (customer.Equals(enter)) //если нашли пользователя, то происходит вход в учетную запись
+                if (enter.Equals(customer)) //если нашли пользователя, то происходит вход в учетную запись
                     return true;
+            return false; //если не нашли в нашем списке подходящего пользовтеля, то что-то ввели не так
+        }
+
+        public bool Admin_Authentication(Admin enter)
+        {
+            if (enter.Equals(Admin))
+                return true;
             return false; //если не нашли в нашем списке подходящего пользовтеля, то что-то ввели не так
         }
 

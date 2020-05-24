@@ -6,3 +6,7 @@ C:\Users\38099\Desktop\Warehouse\CustomerApp\obj\Debug\CustomerApp.Properties.Re
 C:\Users\38099\Desktop\Warehouse\CustomerApp\obj\Debug\CustomerApp.csproj.GenerateResource.cache
 C:\Users\38099\Desktop\Warehouse\CustomerApp\obj\Debug\CustomerApp.exe
 C:\Users\38099\Desktop\Warehouse\CustomerApp\obj\Debug\CustomerApp.pdb
+C:\Users\38099\Desktop\Warehouse\CustomerApp\bin\Debug\WarehouseLibrary.dll
+C:\Users\38099\Desktop\Warehouse\CustomerApp\bin\Debug\WarehouseLibrary.pdb
+C:\Users\38099\Desktop\Warehouse\CustomerApp\obj\Debug\CustomerApp.Authentication.resources
+C:\Users\38099\Desktop\Warehouse\CustomerApp\obj\Debug\CustomerApp.csproj.CopyComplete

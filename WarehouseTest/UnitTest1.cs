@@ -104,16 +104,16 @@ namespace WarehouseTest
         }
 
         [TestMethod]
-        public void Test_validation() {
+        public void Test_authentication() {
             Warehouse warehouse = new Warehouse();
             const int n = 2;
             List<Customer> test_customers = new List<Customer>();
             for (int i = 0; i < n; i++)
                 warehouse.Registration(new Customer { Login = $"Customer{i}", Password = "123", Adress = "234@cust.com" });
-            Assert.IsTrue(warehouse.Validation(new Customer { Login = "Customer0", Password = "123" }));
-            Assert.IsTrue(warehouse.Validation(new Customer { Login = "Customer1", Password = "123" }));
-            Assert.IsFalse(warehouse.Validation(new Customer { Login = "Customer0", Password = "143" }));
-            Assert.IsFalse(warehouse.Validation(new Customer { Login = "Customer33", Password = "123" }));
+            Assert.IsTrue(warehouse.Customer_Authentication(new Customer { Login = "Customer0", Password = "123" }));
+            Assert.IsTrue(warehouse.Customer_Authentication(new Customer { Login = "Customer1", Password = "123" }));
+            Assert.IsFalse(warehouse.Customer_Authentication(new Customer { Login = "Customer0", Password = "143" }));
+            Assert.IsFalse(warehouse.Customer_Authentication(new Customer { Login = "Customer33", Password = "123" }));
         }
     }
 

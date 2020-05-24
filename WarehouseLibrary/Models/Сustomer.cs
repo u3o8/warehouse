@@ -9,17 +9,5 @@ namespace WarehouseLibrary.Models
     {
         public string Adress { set; get; }
 
-        //Для валидации юзеров будем использовать сравнения
-        public override bool Equals(Object obj)
-        {
-            if ((obj == null) || !this.GetType().Equals(obj.GetType()))
-                return false;
-            Customer cust = (Customer)obj;
-            return (this.Login == cust.Login) && (this.Password == cust.Password);
-        }
-        public override int GetHashCode()
-        {
-            return 1;
-        }
     }
 }
