@@ -13,11 +13,11 @@ namespace AdminApp
 {
     public partial class Authentication : Form
     {
-        Warehouse warehouse = new Warehouse();
+        Warehouse warehouse = new Warehouse(); //создаем магазин
         public Authentication()
         {
             InitializeComponent();
-            //warehouse = new Warehouse();
+            warehouse.Load(); //подгружаем данные
         }
 
         private void button_OK_Click(object sender, EventArgs e)
@@ -31,8 +31,8 @@ namespace AdminApp
             //Проверяем
             if (warehouse.Admin_Authentication(temp_admin))
             {
-                Form Home_page = new Form();
-                Home_page.Show(); //Отображаем главное меню
+                Home_Page Home_Page = new Home_Page(warehouse);
+                Home_Page.Show(); //Отображаем главное меню
                 this.Hide(); //Скрываем аутентификацию
             }
             else

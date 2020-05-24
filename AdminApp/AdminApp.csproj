@@ -52,24 +52,37 @@
     <Compile Include="Authentication.Designer.cs">
       <DependentUpon>Authentication.cs</DependentUpon>
     </Compile>
+    <Compile Include="Home_Page.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home_Page.Designer.cs">
+      <DependentUpon>Home_Page.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Authentication.resx">
       <DependentUpon>Authentication.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Home_Page.resx">
+      <DependentUpon>Home_Page.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
+    <None Include="Properties\DataSources\WarehouseLibrary.Models.Customer.datasource" />
+    <None Include="Properties\DataSources\WarehouseLibrary.Models.Order.datasource" />
+    <None Include="Properties\DataSources\WarehouseLibrary.Models.Product.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -84,6 +97,21 @@
       <Project>{7d3cb16e-4fbd-478a-a117-2fa2e93acdec}</Project>
       <Name>WarehouseLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Authentication.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warehouse_products.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Orders.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Customers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Invoices.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,3 +10,4 @@ C:\Users\38099\Desktop\Warehouse\AdminApp\obj\Debug\AdminApp.csproj.CopyComplete
 C:\Users\38099\Desktop\Warehouse\AdminApp\obj\Debug\AdminApp.exe
 C:\Users\38099\Desktop\Warehouse\AdminApp\obj\Debug\AdminApp.pdb
 C:\Users\38099\Desktop\Warehouse\AdminApp\obj\Debug\AdminApp.Authentication.resources
+C:\Users\38099\Desktop\Warehouse\AdminApp\obj\Debug\AdminApp.Home_Page.resources
