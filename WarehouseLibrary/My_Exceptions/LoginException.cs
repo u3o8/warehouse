@@ -8,6 +8,7 @@ namespace WarehouseLibrary.My_Exceptions
     {
         public LoginException(string message) : base(message)
         { 
+
         }
     }
 }

@@ -8,6 +8,7 @@ namespace WarehouseLibrary.My_Exceptions
     {
         public OrderException(string message) : base(message)
         {
+
         }
     }
 }

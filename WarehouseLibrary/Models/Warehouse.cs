@@ -9,100 +9,139 @@ namespace WarehouseLibrary.Models
     [Serializable]
     public class Warehouse
     {
-        public Admin Admin { private set; get; }
-        public User User_now { private set; get; }
-        public List<Product> Products { private set; get; }
-        public List<Customer> Customers { private set; get; }
-        public List<Sales_Invoice> Sales_Invoices { private set; get; }
-        public List<Purchase_Invoice> Purchase_Invoices { private set; get; }
-        public List<Order> Orders { private set; get; }
         public Warehouse()
         {
-            //Стандартный логин и пароль админа. Создадим потом возможность изменять данные параметры
-            Admin = new Admin() {
+            //Стандартный логин и пароль админа.
+            Admin = new Admin()
+            {
                 Login = "admin",
                 Password = "admin",
             };
             Products = new List<Product>();
             Customers = new List<Customer>();
-            Sales_Invoices = new List<Sales_Invoice>();
-            Purchase_Invoices = new List<Purchase_Invoice>();
+            SalesInvoices = new List<SalesInvoice>();
+            PurchaseInvoices = new List<PurchaseInvoice>();
             Orders = new List<Order>();
         }
 
+        public Admin Admin { private set; get; }
+        public User UserNow { private set; get; }
+        public List<Product> Products { private set; get; }
+        public List<Customer> Customers { private set; get; }
+        public List<SalesInvoice> SalesInvoices { private set; get; }
+        public List<PurchaseInvoice> PurchaseInvoices { private set; get; }
+        public List<Order> Orders { private set; get; }
 
-        //Methods
+        //Методы.
 
-        //Подтверждение пользователя,переместилось сюда
-        //в отличии от написанного в спецификации, однако
-        //в классе перегружен метод сравнения
-        public bool Customer_Authentication(Customer enter) {
-            foreach (Customer customer in Customers) //перебор всех пользовтелей
-                if (enter.Equals(customer)) //если нашли пользователя, то происходит вход в учетную запись
+        public bool AuthenticationCustomer(Customer enter)
+        {
+            //Перебор всех пользовтелей.
+            foreach (Customer customer in Customers)
+            {
+                //Если пользователь был найден, то происходит вход в учетную запись.
+                if (enter.Equals(customer))
+                {
                     return true;
-            return false; //если не нашли в нашем списке подходящего пользовтеля, то что-то ввели не так
+                }
+            }
+            //Если не нашли в нашем списке подходящего пользователя, то что-то было введено не так.
+            return false; 
         }
 
-        public bool Admin_Authentication(Admin enter)
+        public bool AuthenticationAdmin(Admin enter)
         {
             if (enter.Equals(Admin))
+            {
                 return true;
-            return false; //если не нашли в нашем списке подходящего пользовтеля, то что-то ввели не так
+            }
+            //Если не нашли в нашем списке подходящего пользовтеля, то что-то ввели не так.
+            return false; 
         }
 
         //Регистрация клиента
-        public void Registration(Customer new_customer) {
-            foreach (Customer customer in Customers) //перебор всех пользовтелей
-                if (customer.Login == new_customer.Login) //если нашли данный логин, то он занят
-                    throw new LoginException("Invalid login!"); //потом словим данное исключение
-            Customers.Add(new_customer); //если нет такого логина, то спокойно регистрируем пользователя
+        public void RegistrationCustomer(Customer newCustomer) 
+        {
+            //Перебор всех пользователей.
+            foreach (Customer customer in Customers) 
+            {
+                //Если нашли данный логин, то он занят.
+                if (customer.Login == newCustomer.Login) 
+                {
+                    throw new LoginException("Invalid login!");
+                }
+            }
+            //Если нет такого логина, то спокойно регистрируем пользователя.
+            Customers.Add(newCustomer); 
         }
 
         //Учет поставки
-        public void Supply(Purchase_Invoice new_supply) {
-            Purchase_Invoices.Add(new_supply); //добавляем нашу поставку
-            List<Product> new_products = new_supply.Product_from_Invoice(); //для добавления в магазин извлекаем продукты из поставки
-            //мы могли бы просто добавить продукты, однако давайте подумаем о том, что определенный продукт может быть уже в магазине
-            //тогда нужно будет увеличить количество, а не иметь два разных продукта
-            foreach (Product new_product in new_products) {
-                bool key = false; //указывает, что товара на складе нет
-                foreach (Product temp in Products) {
-                    if (new_product.Equals(temp))
+        public void AcountingSupply(PurchaseInvoice newSupply) 
+        {
+            PurchaseInvoices.Add(newSupply);
+            //Для добавления в магазин извлекаем продукты из поставки.
+            List<Product> newProducts = newSupply.GetProductFromInvoice(); 
+            //Мы могли бы просто добавить продукты, однако давайте подумаем о том, что определенный продукт может быть уже в магазине,
+            //тогда нужно будет увеличить количество, а не иметь два разных продукта.
+            foreach (Product newProduct in newProducts) 
+            {
+                //Указывает, что товара на складе нет.
+                bool key = false; 
+                foreach (Product temp in Products) 
+                {
+                    if (newProduct.Equals(temp))
                     {
-                        key = true; //указываем, что товар есть на складе, данный товар мы уже не будем добавлять
-                        temp.Amount += new_product.Amount; //если уже имеем данный продукт на складе, то просто меняем количество
+                        //Указываем, что товар есть на складе,
+                        //данный товар мы уже не будем добавлять.
+                        key = true;
+                        //Если уже имеем данный продукт на складе, 
+                        //то просто меняем количество.
+                        temp.Amount += newProduct.Amount; 
                         break;
                     }
                 }
                 if (key == false)
-                    Products.Add(new_product); //тут добавляем
+                {
+                    Products.Add(newProduct); 
+                }
             }
         }
 
-        //Создание заказа
-        public void New_Order(List<Portion> portion_for_order) {
-            Order new_order = new Order(portion_for_order, (Customer)User_now); //создаю конструктором
-            Orders.Add(new_order); //добавляю в заказы
+        //Создание заказа.
+        public void CreateNewOrder(List<Portion> portionForOrder) 
+        {
+            Order newOrder = new Order(portionForOrder, (Customer)UserNow); 
+            Orders.Add(newOrder); 
         }
 
-        public void Сonfirmation_of_order(Order target_order) {
-            Sales_Invoice temp = new Sales_Invoice (target_order.Portions, target_order.Customer); //создаем расходную накладную
-            //Проверяем хватает ли на складе продуктов
-            List<Product> check_products = temp.Product_from_Invoice(); //извлекаем продукты
-            bool key = true; //для понимания, можем принять заказ или нет
-            foreach (Product target_check_product in check_products){
+        public void Сonfirmation_of_order(Order targetOrder)
+        {
+            //Cоздаем расходную накладную.
+            SalesInvoice temp = new SalesInvoice (targetOrder.Portions, targetOrder.Customer);
+            //Проверяем хватает ли на складе продуктов.
+
+            //Извлекаем продукты.
+            List<Product> checkProducts = temp.GetProductFromInvoice();
+            //Для понимания, можем принять заказ или нет.
+            bool key = true; 
+            foreach (Product targetCheckProduct in checkProducts){
                 bool find = false;
-                foreach (Product product_warehouse in Products)
+                foreach (Product productWarehouse in Products)
                 {
-                    if (target_check_product.Equals(product_warehouse)) //Находим продукт в списке
+                    //Находим продукт в списке.
+                    if (targetCheckProduct.Equals(productWarehouse)) 
                     {
                         find = true;
-                        if (product_warehouse.Amount < target_check_product.Amount) //Не хватает? Заказ принять не можем
+                        //Не хватает? Заказ принять не можем.
+                        if (productWarehouse.Amount < targetCheckProduct.Amount) 
+                        {
                             key = false;
+                        }
                         break;
                     }
-                    if (find == false)
-                    { //Не нашли продукт? Не можем заказ принять
+                    //Не нашли продукт? Не можем заказ принять.
+                    if (find == false) 
+                    { 
                         key = false;
                         break;
                     }
@@ -110,24 +149,27 @@ namespace WarehouseLibrary.Models
             }
 
             if (key == false)
-                throw new OrderException("Order cannot be approved!"); //вырабатываем исключение
-            Sales_Invoices.Add(temp); //если можем одобрить заказ, то создаем накладную
+                throw new OrderException("Order cannot be approved!");
+            //Eсли можем одобрить заказ, то создаем накладную.
+            SalesInvoices.Add(temp); 
             //Изменяем количество продуктов
-            foreach (Product target_check_product in check_products)
+            foreach (Product targetCheckProduct in checkProducts)
             {
                 foreach (Product product_warehouse in Products)
                 {
-                    if (target_check_product.Equals(product_warehouse)) //Находим продукт в списке
+                    //Находим продукт в списке.
+                    if (targetCheckProduct.Equals(product_warehouse)) 
                     {
-                        product_warehouse.Amount -= target_check_product.Amount; //изменяем количество
+                        //Изменяем количество.
+                        product_warehouse.Amount -= targetCheckProduct.Amount;
                         break;
                     }
                 }
             }
-            Orders.Remove(target_order); //удаляем заказ, ибо мы его обслужили
+            //Удаляем заказ, т.к. мы его обслужили.
+            Orders.Remove(targetOrder); 
         }
 
-        //////////////////////
         public void Save()
         {
             new Dao(this).Save();

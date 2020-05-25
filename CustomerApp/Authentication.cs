@@ -19,23 +19,28 @@ namespace CustomerApp
             InitializeComponent();
         }
 
-        private void button_OK_Click(object sender, EventArgs e)
+        private void okButton_Click(object sender, EventArgs e)
         {
             //Создаем пользователя для проверки его в списке существующих
-            Customer temp_customer = new Customer() {
-                Login = textbox_Login.Text,
-                Password = textbox_Password.Text
+            Customer temp_customer = new Customer() 
+            {
+                Login = loginTextBox.Text,
+                Password = passwordTextBox.Text
             };
             //Проверяем
-            if (warehouse.Customer_Authentication(temp_customer))
+            if (warehouse.AuthenticationCustomer(temp_customer))
             {
                 Form Home_page = new Form();
-                Home_page.Show(); //Отображаем главное меню
-                this.Hide(); //Скрываем аутентификацию
+                //Отображаем главное меню
+                Home_page.Show();
+                //Скрываем аутентификацию
+                this.Hide();
             }
             else
+            {
                 //Выводим сообщение об ошибки ввода
                 MessageBox.Show("You have entered your password or account name incorrectly. Please check your password and account name and try again.", "Authentication");
+            }
         }
     }
 }

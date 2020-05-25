@@ -13,11 +13,13 @@ namespace AdminApp
 {
     public partial class Authentication : Form
     {
-        Warehouse warehouse = new Warehouse(); //создаем магазин
+        //Cоздаем магазин
+        Warehouse warehouse = new Warehouse(); 
         public Authentication()
         {
             InitializeComponent();
-            warehouse.Load(); //подгружаем данные
+            //Подгружаем данные
+            warehouse.Load(); 
         }
 
         private void okButton_Click(object sender, EventArgs e)
@@ -29,15 +31,19 @@ namespace AdminApp
                 Password = passwordTextBox.Text
             };
             //Проверяем
-            if (warehouse.Admin_Authentication(temp_admin))
+            if (warehouse.AuthenticationAdmin(temp_admin))
             {
                 Home_Page Home_Page = new Home_Page(warehouse);
-                Home_Page.Show(); //Отображаем главное меню
-                this.Hide(); //Скрываем аутентификацию
+                //Отображаем главное меню
+                Home_Page.Show();
+                //Скрываем аутентификацию
+                this.Hide();
             }
             else
+            {
                 //Выводим сообщение об ошибки ввода
                 MessageBox.Show("You have entered your password or account name incorrectly. Please check your password and account name and try again.", "Authentication");
+            }
         }
     }
 }

@@ -28,90 +28,90 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button_OK = new System.Windows.Forms.Button();
-            this.button_Cancel = new System.Windows.Forms.Button();
-            this.textbox_Password = new System.Windows.Forms.TextBox();
-            this.label_Password = new System.Windows.Forms.Label();
-            this.label_Login = new System.Windows.Forms.Label();
-            this.textbox_Login = new System.Windows.Forms.TextBox();
-            this.picture_Authentication = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.picture_Authentication)).BeginInit();
+            this.okButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.passwordLabel = new System.Windows.Forms.Label();
+            this.loginLabel = new System.Windows.Forms.Label();
+            this.loginTextBox = new System.Windows.Forms.TextBox();
+            this.authenticationPictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.authenticationPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // button_OK
+            // okButton
             // 
-            this.button_OK.BackColor = System.Drawing.SystemColors.Info;
-            this.button_OK.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_OK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(16)))), ((int)(((byte)(37)))));
-            this.button_OK.Location = new System.Drawing.Point(209, 246);
-            this.button_OK.Name = "button_OK";
-            this.button_OK.Size = new System.Drawing.Size(139, 62);
-            this.button_OK.TabIndex = 12;
-            this.button_OK.Text = "OK";
-            this.button_OK.UseVisualStyleBackColor = false;
-            this.button_OK.Click += new System.EventHandler(this.button_OK_Click);
+            this.okButton.BackColor = System.Drawing.SystemColors.Info;
+            this.okButton.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.okButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(16)))), ((int)(((byte)(37)))));
+            this.okButton.Location = new System.Drawing.Point(209, 246);
+            this.okButton.Name = "okButton";
+            this.okButton.Size = new System.Drawing.Size(139, 62);
+            this.okButton.TabIndex = 12;
+            this.okButton.Text = "OK";
+            this.okButton.UseVisualStyleBackColor = false;
+            this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
-            // button_Cancel
+            // cancelButton
             // 
-            this.button_Cancel.BackColor = System.Drawing.SystemColors.Info;
-            this.button_Cancel.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Cancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(16)))), ((int)(((byte)(37)))));
-            this.button_Cancel.Location = new System.Drawing.Point(378, 246);
-            this.button_Cancel.Name = "button_Cancel";
-            this.button_Cancel.Size = new System.Drawing.Size(139, 62);
-            this.button_Cancel.TabIndex = 11;
-            this.button_Cancel.Text = "Cancel";
-            this.button_Cancel.UseVisualStyleBackColor = false;
+            this.cancelButton.BackColor = System.Drawing.SystemColors.Info;
+            this.cancelButton.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(16)))), ((int)(((byte)(37)))));
+            this.cancelButton.Location = new System.Drawing.Point(378, 246);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(139, 62);
+            this.cancelButton.TabIndex = 11;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = false;
             // 
-            // textbox_Password
+            // passwordTextBox
             // 
-            this.textbox_Password.BackColor = System.Drawing.SystemColors.Info;
-            this.textbox_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textbox_Password.Location = new System.Drawing.Point(209, 159);
-            this.textbox_Password.Name = "textbox_Password";
-            this.textbox_Password.Size = new System.Drawing.Size(308, 38);
-            this.textbox_Password.TabIndex = 10;
+            this.passwordTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.passwordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordTextBox.Location = new System.Drawing.Point(209, 159);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.Size = new System.Drawing.Size(308, 38);
+            this.passwordTextBox.TabIndex = 10;
             // 
-            // label_Password
+            // passwordLabel
             // 
-            this.label_Password.AutoSize = true;
-            this.label_Password.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(16)))), ((int)(((byte)(37)))));
-            this.label_Password.Location = new System.Drawing.Point(67, 159);
-            this.label_Password.Name = "label_Password";
-            this.label_Password.Size = new System.Drawing.Size(126, 35);
-            this.label_Password.TabIndex = 9;
-            this.label_Password.Text = "Password";
+            this.passwordLabel.AutoSize = true;
+            this.passwordLabel.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(16)))), ((int)(((byte)(37)))));
+            this.passwordLabel.Location = new System.Drawing.Point(67, 159);
+            this.passwordLabel.Name = "passwordLabel";
+            this.passwordLabel.Size = new System.Drawing.Size(126, 35);
+            this.passwordLabel.TabIndex = 9;
+            this.passwordLabel.Text = "Password";
             // 
-            // label_Login
+            // loginLabel
             // 
-            this.label_Login.AutoSize = true;
-            this.label_Login.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Login.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(16)))), ((int)(((byte)(37)))));
-            this.label_Login.Location = new System.Drawing.Point(116, 95);
-            this.label_Login.Name = "label_Login";
-            this.label_Login.Size = new System.Drawing.Size(77, 35);
-            this.label_Login.TabIndex = 8;
-            this.label_Login.Text = "Login";
+            this.loginLabel.AutoSize = true;
+            this.loginLabel.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(16)))), ((int)(((byte)(37)))));
+            this.loginLabel.Location = new System.Drawing.Point(116, 95);
+            this.loginLabel.Name = "loginLabel";
+            this.loginLabel.Size = new System.Drawing.Size(77, 35);
+            this.loginLabel.TabIndex = 8;
+            this.loginLabel.Text = "Login";
             // 
-            // textbox_Login
+            // loginTextBox
             // 
-            this.textbox_Login.BackColor = System.Drawing.SystemColors.Info;
-            this.textbox_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textbox_Login.Location = new System.Drawing.Point(209, 92);
-            this.textbox_Login.Name = "textbox_Login";
-            this.textbox_Login.Size = new System.Drawing.Size(308, 38);
-            this.textbox_Login.TabIndex = 7;
+            this.loginTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.loginTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginTextBox.Location = new System.Drawing.Point(209, 92);
+            this.loginTextBox.Name = "loginTextBox";
+            this.loginTextBox.Size = new System.Drawing.Size(308, 38);
+            this.loginTextBox.TabIndex = 7;
             // 
-            // picture_Authentication
+            // authenticationPictureBox
             // 
-            this.picture_Authentication.Image = global::CustomerApp.Properties.Resources.Authentication;
-            this.picture_Authentication.Location = new System.Drawing.Point(25, 16);
-            this.picture_Authentication.Name = "picture_Authentication";
-            this.picture_Authentication.Size = new System.Drawing.Size(116, 76);
-            this.picture_Authentication.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picture_Authentication.TabIndex = 13;
-            this.picture_Authentication.TabStop = false;
+            this.authenticationPictureBox.Image = global::CustomerApp.Properties.Resources.Authentication;
+            this.authenticationPictureBox.Location = new System.Drawing.Point(25, 16);
+            this.authenticationPictureBox.Name = "authenticationPictureBox";
+            this.authenticationPictureBox.Size = new System.Drawing.Size(116, 76);
+            this.authenticationPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.authenticationPictureBox.TabIndex = 13;
+            this.authenticationPictureBox.TabStop = false;
             // 
             // Authentication
             // 
@@ -119,18 +119,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(575, 340);
-            this.Controls.Add(this.picture_Authentication);
-            this.Controls.Add(this.button_OK);
-            this.Controls.Add(this.button_Cancel);
-            this.Controls.Add(this.textbox_Password);
-            this.Controls.Add(this.label_Password);
-            this.Controls.Add(this.label_Login);
-            this.Controls.Add(this.textbox_Login);
+            this.Controls.Add(this.authenticationPictureBox);
+            this.Controls.Add(this.okButton);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.passwordTextBox);
+            this.Controls.Add(this.passwordLabel);
+            this.Controls.Add(this.loginLabel);
+            this.Controls.Add(this.loginTextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Authentication";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Authentication";
-            ((System.ComponentModel.ISupportInitialize)(this.picture_Authentication)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.authenticationPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,13 +138,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button_OK;
-        private System.Windows.Forms.Button button_Cancel;
-        private System.Windows.Forms.TextBox textbox_Password;
-        private System.Windows.Forms.Label label_Password;
-        private System.Windows.Forms.Label label_Login;
-        private System.Windows.Forms.TextBox textbox_Login;
-        private System.Windows.Forms.PictureBox picture_Authentication;
+        private System.Windows.Forms.Button okButton;
+        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.TextBox passwordTextBox;
+        private System.Windows.Forms.Label passwordLabel;
+        private System.Windows.Forms.Label loginLabel;
+        private System.Windows.Forms.TextBox loginTextBox;
+        private System.Windows.Forms.PictureBox authenticationPictureBox;
     }
 }
 

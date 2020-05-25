@@ -5,9 +5,12 @@ using System.Text;
 namespace WarehouseLibrary.Models
 {
     [Serializable]
-    public class Purchase_Invoice : Invoice
+    public class PurchaseInvoice : Invoice
     {
-        public Purchase_Invoice(List<Portion> portions) : base(portions) { }
+        public PurchaseInvoice(List<Portion> portions) : base(portions)
+        {
+        
+        }
         
     }
 }
