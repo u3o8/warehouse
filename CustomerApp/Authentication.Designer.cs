@@ -34,8 +34,8 @@
             this.label_Password = new System.Windows.Forms.Label();
             this.label_Login = new System.Windows.Forms.Label();
             this.textbox_Login = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.picture_Authentication = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_Authentication)).BeginInit();
             this.SuspendLayout();
             // 
             // button_OK
@@ -103,15 +103,15 @@
             this.textbox_Login.Size = new System.Drawing.Size(308, 38);
             this.textbox_Login.TabIndex = 7;
             // 
-            // pictureBox1
+            // picture_Authentication
             // 
-            this.pictureBox1.Image = global::CustomerApp.Properties.Resources.Authentication;
-            this.pictureBox1.Location = new System.Drawing.Point(25, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(116, 76);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
+            this.picture_Authentication.Image = global::CustomerApp.Properties.Resources.Authentication;
+            this.picture_Authentication.Location = new System.Drawing.Point(25, 16);
+            this.picture_Authentication.Name = "picture_Authentication";
+            this.picture_Authentication.Size = new System.Drawing.Size(116, 76);
+            this.picture_Authentication.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picture_Authentication.TabIndex = 13;
+            this.picture_Authentication.TabStop = false;
             // 
             // Authentication
             // 
@@ -119,7 +119,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(575, 340);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picture_Authentication);
             this.Controls.Add(this.button_OK);
             this.Controls.Add(this.button_Cancel);
             this.Controls.Add(this.textbox_Password);
@@ -130,7 +130,7 @@
             this.Name = "Authentication";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Authentication";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_Authentication)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,7 +144,7 @@
         private System.Windows.Forms.Label label_Password;
         private System.Windows.Forms.Label label_Login;
         private System.Windows.Forms.TextBox textbox_Login;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picture_Authentication;
     }
 }
 

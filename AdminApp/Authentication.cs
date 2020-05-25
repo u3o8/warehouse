@@ -20,13 +20,13 @@ namespace AdminApp
             warehouse.Load(); //подгружаем данные
         }
 
-        private void button_OK_Click(object sender, EventArgs e)
+        private void okButton_Click(object sender, EventArgs e)
         {
             //Создаем пользователя для проверки его в списке существующих
             Admin temp_admin = new Admin()
             {
-                Login = textbox_Login.Text,
-                Password = textbox_Password.Text
+                Login = loginTextBox.Text,
+                Password = passwordTextBox.Text
             };
             //Проверяем
             if (warehouse.Admin_Authentication(temp_admin))
