@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.confirmButton = new System.Windows.Forms.Button();
-            this.passwordTextBox = new System.Windows.Forms.TextBox();
-            this.labelPassword = new System.Windows.Forms.Label();
-            this.labelLogin = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.newPasswordTextBox = new System.Windows.Forms.TextBox();
+            this.newPasswordLabel = new System.Windows.Forms.Label();
+            this.currentPasswordLabel = new System.Windows.Forms.Label();
+            this.currentPasswordTextBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.ordersLabel = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.passwordLabel = new System.Windows.Forms.Label();
+            this.passwordPictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.passwordPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // confirmButton
@@ -50,46 +50,47 @@
             this.confirmButton.TabIndex = 36;
             this.confirmButton.Text = "Confirm";
             this.confirmButton.UseVisualStyleBackColor = false;
+            this.confirmButton.Click += new System.EventHandler(this.confirmButton_Click);
             // 
-            // passwordTextBox
+            // newPasswordTextBox
             // 
-            this.passwordTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.passwordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTextBox.Location = new System.Drawing.Point(257, 164);
-            this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(308, 38);
-            this.passwordTextBox.TabIndex = 40;
+            this.newPasswordTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.newPasswordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newPasswordTextBox.Location = new System.Drawing.Point(257, 164);
+            this.newPasswordTextBox.Name = "newPasswordTextBox";
+            this.newPasswordTextBox.Size = new System.Drawing.Size(308, 38);
+            this.newPasswordTextBox.TabIndex = 40;
             // 
-            // labelPassword
+            // newPasswordLabel
             // 
-            this.labelPassword.AutoSize = true;
-            this.labelPassword.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(16)))), ((int)(((byte)(37)))));
-            this.labelPassword.Location = new System.Drawing.Point(38, 164);
-            this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(193, 35);
-            this.labelPassword.TabIndex = 39;
-            this.labelPassword.Text = "New Password:";
+            this.newPasswordLabel.AutoSize = true;
+            this.newPasswordLabel.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newPasswordLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(16)))), ((int)(((byte)(37)))));
+            this.newPasswordLabel.Location = new System.Drawing.Point(38, 164);
+            this.newPasswordLabel.Name = "newPasswordLabel";
+            this.newPasswordLabel.Size = new System.Drawing.Size(193, 35);
+            this.newPasswordLabel.TabIndex = 39;
+            this.newPasswordLabel.Text = "New Password:";
             // 
-            // labelLogin
+            // currentPasswordLabel
             // 
-            this.labelLogin.AutoSize = true;
-            this.labelLogin.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(16)))), ((int)(((byte)(37)))));
-            this.labelLogin.Location = new System.Drawing.Point(5, 100);
-            this.labelLogin.Name = "labelLogin";
-            this.labelLogin.Size = new System.Drawing.Size(229, 35);
-            this.labelLogin.TabIndex = 38;
-            this.labelLogin.Text = "Current Password:";
+            this.currentPasswordLabel.AutoSize = true;
+            this.currentPasswordLabel.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentPasswordLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(16)))), ((int)(((byte)(37)))));
+            this.currentPasswordLabel.Location = new System.Drawing.Point(5, 100);
+            this.currentPasswordLabel.Name = "currentPasswordLabel";
+            this.currentPasswordLabel.Size = new System.Drawing.Size(229, 35);
+            this.currentPasswordLabel.TabIndex = 38;
+            this.currentPasswordLabel.Text = "Current Password:";
             // 
-            // textBox1
+            // currentPasswordTextBox
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Info;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(257, 100);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(308, 38);
-            this.textBox1.TabIndex = 37;
+            this.currentPasswordTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.currentPasswordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentPasswordTextBox.Location = new System.Drawing.Point(257, 100);
+            this.currentPasswordTextBox.Name = "currentPasswordTextBox";
+            this.currentPasswordTextBox.Size = new System.Drawing.Size(308, 38);
+            this.currentPasswordTextBox.TabIndex = 37;
             // 
             // button1
             // 
@@ -103,26 +104,26 @@
             this.button1.Text = "Cancel";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // ordersLabel
+            // passwordLabel
             // 
-            this.ordersLabel.AutoSize = true;
-            this.ordersLabel.Font = new System.Drawing.Font("Calibri", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ordersLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(16)))), ((int)(((byte)(37)))));
-            this.ordersLabel.Location = new System.Drawing.Point(249, 23);
-            this.ordersLabel.Name = "ordersLabel";
-            this.ordersLabel.Size = new System.Drawing.Size(251, 46);
-            this.ordersLabel.TabIndex = 42;
-            this.ordersLabel.Text = "New Password";
+            this.passwordLabel.AutoSize = true;
+            this.passwordLabel.Font = new System.Drawing.Font("Calibri", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(16)))), ((int)(((byte)(37)))));
+            this.passwordLabel.Location = new System.Drawing.Point(249, 23);
+            this.passwordLabel.Name = "passwordLabel";
+            this.passwordLabel.Size = new System.Drawing.Size(251, 46);
+            this.passwordLabel.TabIndex = 42;
+            this.passwordLabel.Text = "New Password";
             // 
-            // pictureBox1
+            // passwordPictureBox
             // 
-            this.pictureBox1.Image = global::AdminApp.Properties.Resources.NewPassword;
-            this.pictureBox1.Location = new System.Drawing.Point(120, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(134, 93);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 43;
-            this.pictureBox1.TabStop = false;
+            this.passwordPictureBox.Image = global::AdminApp.Properties.Resources.NewPassword;
+            this.passwordPictureBox.Location = new System.Drawing.Point(120, 6);
+            this.passwordPictureBox.Name = "passwordPictureBox";
+            this.passwordPictureBox.Size = new System.Drawing.Size(134, 93);
+            this.passwordPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.passwordPictureBox.TabIndex = 43;
+            this.passwordPictureBox.TabStop = false;
             // 
             // NewPassword
             // 
@@ -130,17 +131,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(600, 330);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.ordersLabel);
+            this.Controls.Add(this.passwordPictureBox);
+            this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.passwordTextBox);
-            this.Controls.Add(this.labelPassword);
-            this.Controls.Add(this.labelLogin);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.newPasswordTextBox);
+            this.Controls.Add(this.newPasswordLabel);
+            this.Controls.Add(this.currentPasswordLabel);
+            this.Controls.Add(this.currentPasswordTextBox);
             this.Controls.Add(this.confirmButton);
             this.Name = "NewPassword";
             this.Text = "NewPassword";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passwordPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,12 +149,12 @@
 
         #endregion
         private System.Windows.Forms.Button confirmButton;
-        private System.Windows.Forms.TextBox passwordTextBox;
-        private System.Windows.Forms.Label labelPassword;
-        private System.Windows.Forms.Label labelLogin;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox newPasswordTextBox;
+        private System.Windows.Forms.Label newPasswordLabel;
+        private System.Windows.Forms.Label currentPasswordLabel;
+        private System.Windows.Forms.TextBox currentPasswordTextBox;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label ordersLabel;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label passwordLabel;
+        private System.Windows.Forms.PictureBox passwordPictureBox;
     }
 }

@@ -22,19 +22,44 @@ namespace CustomerApp
             portionBindingSource.DataSource = ((Customer)warehouse.UserNow).Basket;
             orderBindingSource.DataSource = ((Customer)warehouse.UserNow).Orders;
         }
+        private void HomePage_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var res = MessageBox.Show("Save data before exit?", "Exit", MessageBoxButtons.YesNoCancel);
+            switch (res)
+            {
+                case DialogResult.Cancel:
+                    e.Cancel = true;
+                    break;
+                case DialogResult.Yes:
+                    warehouse.Save();
+                    break;
+                case DialogResult.No:
+                    break;
+            }
+        }
+
+        private void HomePage_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
         private void addBasketButton_Click(object sender, EventArgs e)
         {
             var toAddProduct = (Product)productBindingSource.Current;
             AddBasket addBasket = new AddBasket(warehouse, toAddProduct, portionBindingSource);
-            addBasket.Show();
+            addBasket.ShowDialog();
         }
 
         private void editBasketButton_Click(object sender, EventArgs e)
         {
             var toEditPortion = (Portion)portionBindingSource.Current;
             EditBasket editBasket = new EditBasket(warehouse, toEditPortion, portionBindingSource);
-            editBasket.Show();
+            editBasket.ShowDialog();
         }
 
         private void deleteBasketButton_Click(object sender, EventArgs e)
@@ -60,6 +85,17 @@ namespace CustomerApp
             var toDeleteOrder = (Order)orderBindingSource.Current;
             warehouse.DeleteOrder(toDeleteOrder);
             orderBindingSource.ResetBindings(false);
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            warehouse.Save();
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewPassword newPassword = new NewPassword(warehouse);
+            newPassword.ShowDialog();
         }
     }
 }

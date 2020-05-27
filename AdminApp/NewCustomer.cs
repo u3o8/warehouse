@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WarehouseLibrary.Models;
+using WarehouseLibrary.My_Exceptions;
 
 namespace AdminApp
 {
@@ -30,9 +31,16 @@ namespace AdminApp
                 Adress = adressTextBox.Text,
                 Password = passwordTextBox.Text
             };
-            warehouse.RegistrationCustomer(newCustomer);
-            customerBindingSource.ResetBindings(false);
-            this.Close();
+            try
+            {
+                warehouse.RegistrationCustomer(newCustomer);
+                customerBindingSource.ResetBindings(false);
+                this.Close();
+            }
+            catch (LoginException ex)
+            {
+                MessageBox.Show(ex.Message, "Exception");
+            }
         }
     }
 }

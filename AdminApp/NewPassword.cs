@@ -7,14 +7,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WarehouseLibrary.Models;
+using WarehouseLibrary.My_Exceptions;
 
 namespace AdminApp
 {
     public partial class NewPassword : Form
     {
-        public NewPassword()
+        Warehouse warehouse;
+        public NewPassword(Warehouse warehouse)
         {
             InitializeComponent();
+            this.warehouse = warehouse;
+        }
+
+        private void confirmButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                warehouse.ChangePassword(currentPasswordTextBox.Text, newPasswordTextBox.Text);
+                this.Close();
+            }
+            catch (PasswordException ex)
+            {
+                MessageBox.Show(ex.Message, "Exception");
+            }
         }
     }
 }

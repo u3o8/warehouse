@@ -44,12 +44,12 @@
             this.idNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.supplyLabel = new System.Windows.Forms.Label();
             this.priceNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.tempProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tempProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.supplyGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.amountNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.idNumericUpDown)).BeginInit();
@@ -156,6 +156,8 @@
             // 
             // supplyGrid
             // 
+            this.supplyGrid.AllowUserToAddRows = false;
+            this.supplyGrid.AllowUserToDeleteRows = false;
             this.supplyGrid.AutoGenerateColumns = false;
             this.supplyGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.supplyGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -167,6 +169,7 @@
             this.supplyGrid.DataSource = this.tempProductBindingSource;
             this.supplyGrid.Location = new System.Drawing.Point(43, 117);
             this.supplyGrid.Name = "supplyGrid";
+            this.supplyGrid.ReadOnly = true;
             this.supplyGrid.RowHeadersWidth = 51;
             this.supplyGrid.RowTemplate.Height = 24;
             this.supplyGrid.Size = new System.Drawing.Size(414, 379);
@@ -240,16 +243,13 @@
             this.priceNumericUpDown.Size = new System.Drawing.Size(284, 38);
             this.priceNumericUpDown.TabIndex = 29;
             // 
-            // tempProductBindingSource
-            // 
-            this.tempProductBindingSource.DataSource = typeof(WarehouseLibrary.Models.Product);
-            // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             this.nameDataGridViewTextBoxColumn.Width = 125;
             // 
             // idDataGridViewTextBoxColumn
@@ -258,6 +258,7 @@
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
             this.idDataGridViewTextBoxColumn.Width = 125;
             // 
             // unitDataGridViewTextBoxColumn
@@ -266,6 +267,7 @@
             this.unitDataGridViewTextBoxColumn.HeaderText = "Unit";
             this.unitDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.unitDataGridViewTextBoxColumn.Name = "unitDataGridViewTextBoxColumn";
+            this.unitDataGridViewTextBoxColumn.ReadOnly = true;
             this.unitDataGridViewTextBoxColumn.Width = 125;
             // 
             // priceDataGridViewTextBoxColumn
@@ -274,6 +276,7 @@
             this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
             this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
             this.priceDataGridViewTextBoxColumn.Width = 125;
             // 
             // amountDataGridViewTextBoxColumn
@@ -282,7 +285,12 @@
             this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
             this.amountDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
             this.amountDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // tempProductBindingSource
+            // 
+            this.tempProductBindingSource.DataSource = typeof(WarehouseLibrary.Models.Product);
             // 
             // NewSupply
             // 

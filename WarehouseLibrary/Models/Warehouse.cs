@@ -69,7 +69,7 @@ namespace WarehouseLibrary.Models
         public void RegistrationCustomer(Customer newCustomer) 
         {
             //Пользователь не может взять логин администратора.
-            if (newCustomer.Login == "Admin")
+            if (newCustomer.Login == Admin.Login)
             {
                 throw new LoginException("Invalid login!");
             }
@@ -85,12 +85,28 @@ namespace WarehouseLibrary.Models
             //Если нет такого логина, то спокойно регистрируем пользователя.
             newCustomer.Orders = new List<Order>();
             newCustomer.Basket = new List<Portion>();
+            newCustomer.History = new List<Order>();
             Customers.Add(newCustomer); 
         }
 
         //Изменение пароля администратора
-        public void ChangeAdminPassword(string newPassword) {
-            Admin.Password = newPassword;
+        public void ChangePassword(string currentPassword, string newPassword) 
+        {
+            if (Admin.Password == currentPassword)
+            {
+                if (Admin.Password != newPassword)
+                {
+                    Admin.Password = newPassword;
+                }
+                else
+                {
+                    throw new PasswordException("Passwords are the same");
+                }
+            }
+            else
+            {
+                throw new PasswordException("Current password is incorrect");
+            }
         }
 
         //Учет поставки.
@@ -149,7 +165,8 @@ namespace WarehouseLibrary.Models
             Orders.Remove(order);
         }
 
-        public void Сonfirmation_of_order(Order targetOrder)
+        //Подтверждение заказа
+        public void СonfirmationOfOrder(Order targetOrder)
         {
             //Cоздаем расходную накладную.
             SalesInvoice temp = new SalesInvoice (targetOrder.Portions, targetOrder.Customer);
@@ -174,12 +191,12 @@ namespace WarehouseLibrary.Models
                         }
                         break;
                     }
-                    //Не нашли продукт? Не можем заказ принять.
-                    if (find == false) 
-                    { 
-                        key = false;
-                        break;
-                    }
+                }
+                //Не нашли продукт? Не можем заказ принять.
+                if (find == false)
+                {
+                    key = false;
+                    break;
                 }
             }
 
@@ -201,8 +218,9 @@ namespace WarehouseLibrary.Models
                     }
                 }
             }
+            targetOrder.Customer.History.Add(targetOrder);
             //Удаляем заказ, т.к. мы его обслужили.
-            Orders.Remove(targetOrder); 
+            DeleteOrder(targetOrder); 
         }
 
         public void Save()

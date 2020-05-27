@@ -16,5 +16,6 @@ namespace WarehouseLibrary.Models
         public List<Portion> Portions { private set; get; }
         public Customer Customer { private set; get; }
         public DateTime DateTime { private set; get; }
+        public string CustomerLogin { get => Customer.Login; }
     }
 }

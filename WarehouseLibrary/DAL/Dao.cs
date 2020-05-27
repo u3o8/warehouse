@@ -40,6 +40,7 @@ namespace WarehouseLibrary.DAL
                 Copy(wr.Orders, warehouse.Orders);
                 Copy(wr.SalesInvoices, warehouse.SalesInvoices);
                 Copy(wr.PurchaseInvoices, warehouse.PurchaseInvoices);
+                warehouse.Admin.Copy(wr.Admin);
             }
 
             void Copy<T>(List<T> from, List<T> to)

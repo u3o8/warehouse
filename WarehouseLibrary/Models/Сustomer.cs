@@ -8,6 +8,7 @@ namespace WarehouseLibrary.Models
     public class Customer : User
     {
         public string Adress { set; get; }
+        public List<Order> History { set; get; }
         public List<Order> Orders { set; get; }
         public List<Portion> Basket { set; get; }
 

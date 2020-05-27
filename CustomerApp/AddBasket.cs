@@ -34,8 +34,7 @@ namespace CustomerApp
             ((Customer)(warehouse.UserNow)).Basket.Add(new Portion() 
             {
                 Product = product,
-                Amount = (double)amountNumericUpDown.Value,
-                NameProduct = product.Name
+                Amount = (double)amountNumericUpDown.Value
             });
             portionBindingSource.ResetBindings(false);
             this.Close();

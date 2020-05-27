@@ -33,10 +33,12 @@
             this.warehouseProductsLabel = new System.Windows.Forms.Label();
             this.deleteBasketButton = new System.Windows.Forms.Button();
             this.basketGrid = new System.Windows.Forms.DataGridView();
+            this.NameProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.basketLabel = new System.Windows.Forms.Label();
             this.editBasketButton = new System.Windows.Forms.Button();
             this.addBasketButton = new System.Windows.Forms.Button();
             this.orderGrid = new System.Windows.Forms.DataGridView();
+            this.Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderLabel = new System.Windows.Forms.Label();
             this.deleteOrderButton = new System.Windows.Forms.Button();
             this.checkHistoryButton = new System.Windows.Forms.Button();
@@ -46,12 +48,14 @@
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.NameProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changeAdressToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.confirmButton = new System.Windows.Forms.Button();
+            this.aboutButton = new System.Windows.Forms.Button();
             this.orderPictureBox = new System.Windows.Forms.PictureBox();
             this.basketPictureBox = new System.Windows.Forms.PictureBox();
             this.warehouseProductsPictureBox = new System.Windows.Forms.PictureBox();
-            this.confirmButton = new System.Windows.Forms.Button();
-            this.Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateTimeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.amountDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,7 +67,6 @@
             this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.aboutButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.productGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.basketGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderGrid)).BeginInit();
@@ -78,6 +81,8 @@
             // 
             // productGrid
             // 
+            this.productGrid.AllowUserToAddRows = false;
+            this.productGrid.AllowUserToDeleteRows = false;
             this.productGrid.AutoGenerateColumns = false;
             this.productGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.productGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -90,6 +95,7 @@
             this.productGrid.DataSource = this.productBindingSource;
             this.productGrid.Location = new System.Drawing.Point(30, 120);
             this.productGrid.Name = "productGrid";
+            this.productGrid.ReadOnly = true;
             this.productGrid.RowHeadersWidth = 51;
             this.productGrid.RowTemplate.Height = 24;
             this.productGrid.Size = new System.Drawing.Size(581, 508);
@@ -121,6 +127,7 @@
             // 
             // basketGrid
             // 
+            this.basketGrid.AllowUserToAddRows = false;
             this.basketGrid.AutoGenerateColumns = false;
             this.basketGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.basketGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -129,10 +136,20 @@
             this.basketGrid.DataSource = this.portionBindingSource;
             this.basketGrid.Location = new System.Drawing.Point(633, 120);
             this.basketGrid.Name = "basketGrid";
+            this.basketGrid.ReadOnly = true;
             this.basketGrid.RowHeadersWidth = 51;
             this.basketGrid.RowTemplate.Height = 24;
             this.basketGrid.Size = new System.Drawing.Size(455, 364);
             this.basketGrid.TabIndex = 34;
+            // 
+            // NameProduct
+            // 
+            this.NameProduct.DataPropertyName = "NameProduct";
+            this.NameProduct.HeaderText = "NameProduct";
+            this.NameProduct.MinimumWidth = 6;
+            this.NameProduct.Name = "NameProduct";
+            this.NameProduct.ReadOnly = true;
+            this.NameProduct.Width = 125;
             // 
             // basketLabel
             // 
@@ -173,6 +190,8 @@
             // 
             // orderGrid
             // 
+            this.orderGrid.AllowUserToAddRows = false;
+            this.orderGrid.AllowUserToDeleteRows = false;
             this.orderGrid.AutoGenerateColumns = false;
             this.orderGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.orderGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -181,11 +200,20 @@
             this.orderGrid.DataSource = this.orderBindingSource;
             this.orderGrid.Location = new System.Drawing.Point(1111, 121);
             this.orderGrid.Name = "orderGrid";
+            this.orderGrid.ReadOnly = true;
             this.orderGrid.RowHeadersWidth = 51;
             this.orderGrid.RowTemplate.Height = 24;
             this.orderGrid.Size = new System.Drawing.Size(316, 287);
             this.orderGrid.TabIndex = 38;
             this.orderGrid.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.orderGrid_RowPostPaint);
+            // 
+            // Order
+            // 
+            this.Order.HeaderText = "Order";
+            this.Order.MinimumWidth = 6;
+            this.Order.Name = "Order";
+            this.Order.ReadOnly = true;
+            this.Order.Width = 125;
             // 
             // orderLabel
             // 
@@ -242,7 +270,7 @@
             this.userToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1448, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1448, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -252,7 +280,7 @@
             this.saveToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // saveToolStripMenuItem
@@ -260,6 +288,7 @@
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(123, 26);
             this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -269,17 +298,57 @@
             // 
             // userToolStripMenuItem
             // 
+            this.userToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem,
+            this.changePasswordToolStripMenuItem,
+            this.changeAdressToolStripMenuItem});
             this.userToolStripMenuItem.Name = "userToolStripMenuItem";
-            this.userToolStripMenuItem.Size = new System.Drawing.Size(52, 24);
+            this.userToolStripMenuItem.Size = new System.Drawing.Size(52, 26);
             this.userToolStripMenuItem.Text = "User";
             // 
-            // NameProduct
+            // aboutToolStripMenuItem
             // 
-            this.NameProduct.DataPropertyName = "NameProduct";
-            this.NameProduct.HeaderText = "NameProduct";
-            this.NameProduct.MinimumWidth = 6;
-            this.NameProduct.Name = "NameProduct";
-            this.NameProduct.Width = 125;
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.aboutToolStripMenuItem.Text = "About";
+            // 
+            // changePasswordToolStripMenuItem
+            // 
+            this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.changePasswordToolStripMenuItem.Text = "Change Password";
+            this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
+            // 
+            // changeAdressToolStripMenuItem
+            // 
+            this.changeAdressToolStripMenuItem.Name = "changeAdressToolStripMenuItem";
+            this.changeAdressToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.changeAdressToolStripMenuItem.Text = "Change Adress";
+            // 
+            // confirmButton
+            // 
+            this.confirmButton.BackColor = System.Drawing.SystemColors.Info;
+            this.confirmButton.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(16)))), ((int)(((byte)(37)))));
+            this.confirmButton.Location = new System.Drawing.Point(704, 563);
+            this.confirmButton.Name = "confirmButton";
+            this.confirmButton.Size = new System.Drawing.Size(316, 57);
+            this.confirmButton.TabIndex = 46;
+            this.confirmButton.Text = "Confirm order";
+            this.confirmButton.UseVisualStyleBackColor = false;
+            this.confirmButton.Click += new System.EventHandler(this.confirmButton_Click);
+            // 
+            // aboutButton
+            // 
+            this.aboutButton.BackColor = System.Drawing.SystemColors.Info;
+            this.aboutButton.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aboutButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(16)))), ((int)(((byte)(37)))));
+            this.aboutButton.Location = new System.Drawing.Point(1111, 427);
+            this.aboutButton.Name = "aboutButton";
+            this.aboutButton.Size = new System.Drawing.Size(153, 57);
+            this.aboutButton.TabIndex = 47;
+            this.aboutButton.Text = "About";
+            this.aboutButton.UseVisualStyleBackColor = false;
             // 
             // orderPictureBox
             // 
@@ -314,26 +383,6 @@
             this.warehouseProductsPictureBox.TabIndex = 32;
             this.warehouseProductsPictureBox.TabStop = false;
             // 
-            // confirmButton
-            // 
-            this.confirmButton.BackColor = System.Drawing.SystemColors.Info;
-            this.confirmButton.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(16)))), ((int)(((byte)(37)))));
-            this.confirmButton.Location = new System.Drawing.Point(704, 563);
-            this.confirmButton.Name = "confirmButton";
-            this.confirmButton.Size = new System.Drawing.Size(316, 57);
-            this.confirmButton.TabIndex = 46;
-            this.confirmButton.Text = "Confirm order";
-            this.confirmButton.UseVisualStyleBackColor = false;
-            this.confirmButton.Click += new System.EventHandler(this.confirmButton_Click);
-            // 
-            // Order
-            // 
-            this.Order.HeaderText = "Order";
-            this.Order.MinimumWidth = 6;
-            this.Order.Name = "Order";
-            this.Order.Width = 125;
-            // 
             // dateTimeDataGridViewTextBoxColumn1
             // 
             this.dateTimeDataGridViewTextBoxColumn1.DataPropertyName = "DateTime";
@@ -353,6 +402,7 @@
             this.amountDataGridViewTextBoxColumn1.HeaderText = "Amount";
             this.amountDataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.amountDataGridViewTextBoxColumn1.Name = "amountDataGridViewTextBoxColumn1";
+            this.amountDataGridViewTextBoxColumn1.ReadOnly = true;
             this.amountDataGridViewTextBoxColumn1.Width = 125;
             // 
             // portionBindingSource
@@ -365,6 +415,7 @@
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             this.nameDataGridViewTextBoxColumn.Width = 125;
             // 
             // idDataGridViewTextBoxColumn
@@ -373,6 +424,7 @@
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
             this.idDataGridViewTextBoxColumn.Width = 125;
             // 
             // unitDataGridViewTextBoxColumn
@@ -381,6 +433,7 @@
             this.unitDataGridViewTextBoxColumn.HeaderText = "Unit";
             this.unitDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.unitDataGridViewTextBoxColumn.Name = "unitDataGridViewTextBoxColumn";
+            this.unitDataGridViewTextBoxColumn.ReadOnly = true;
             this.unitDataGridViewTextBoxColumn.Width = 125;
             // 
             // priceDataGridViewTextBoxColumn
@@ -389,6 +442,7 @@
             this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
             this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
             this.priceDataGridViewTextBoxColumn.Width = 125;
             // 
             // amountDataGridViewTextBoxColumn
@@ -397,6 +451,7 @@
             this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
             this.amountDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
             this.amountDataGridViewTextBoxColumn.Width = 125;
             // 
             // dateTimeDataGridViewTextBoxColumn
@@ -405,23 +460,12 @@
             this.dateTimeDataGridViewTextBoxColumn.HeaderText = "DateTime";
             this.dateTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dateTimeDataGridViewTextBoxColumn.Name = "dateTimeDataGridViewTextBoxColumn";
+            this.dateTimeDataGridViewTextBoxColumn.ReadOnly = true;
             this.dateTimeDataGridViewTextBoxColumn.Width = 125;
             // 
             // productBindingSource
             // 
             this.productBindingSource.DataSource = typeof(WarehouseLibrary.Models.Product);
-            // 
-            // aboutButton
-            // 
-            this.aboutButton.BackColor = System.Drawing.SystemColors.Info;
-            this.aboutButton.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aboutButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(16)))), ((int)(((byte)(37)))));
-            this.aboutButton.Location = new System.Drawing.Point(1111, 427);
-            this.aboutButton.Name = "aboutButton";
-            this.aboutButton.Size = new System.Drawing.Size(153, 57);
-            this.aboutButton.TabIndex = 47;
-            this.aboutButton.Text = "About";
-            this.aboutButton.UseVisualStyleBackColor = false;
             // 
             // HomePage
             // 
@@ -503,5 +547,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Order;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateTimeDataGridViewTextBoxColumn1;
         private System.Windows.Forms.Button aboutButton;
+        private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changeAdressToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
