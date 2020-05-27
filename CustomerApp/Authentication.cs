@@ -17,22 +17,23 @@ namespace CustomerApp
         public Authentication()
         {
             InitializeComponent();
+            warehouse.Load();
         }
 
         private void okButton_Click(object sender, EventArgs e)
         {
             //Создаем пользователя для проверки его в списке существующих
-            Customer temp_customer = new Customer() 
+            Customer tempCustomer = new Customer() 
             {
                 Login = loginTextBox.Text,
                 Password = passwordTextBox.Text
             };
             //Проверяем
-            if (warehouse.AuthenticationCustomer(temp_customer))
+            if (warehouse.AuthenticationCustomer(tempCustomer))
             {
-                Form Home_page = new Form();
+                HomePage homePage = new HomePage(warehouse);
                 //Отображаем главное меню
-                Home_page.Show();
+                homePage.Show();
                 //Скрываем аутентификацию
                 this.Hide();
             }

@@ -29,7 +29,8 @@ namespace WarehouseLibrary.Models
                     Id = this.Portions[i].Product.Id,
                     Unit = this.Portions[i].Product.Unit,
                     Price = this.Portions[i].Product.Price,
-                    Amount = this.Portions[i].Amount
+                    Amount = this.Portions[i].Amount,
+                    DateTime = this.Portions[i].Product.DateTime
                 };
                 newProducts.Add(temp);
             }

@@ -9,5 +9,6 @@ namespace WarehouseLibrary.Models
     {
         public Product Product { set; get; }
         public double Amount { set; get; }
+        public string NameProduct { set; get; }
     }
 }

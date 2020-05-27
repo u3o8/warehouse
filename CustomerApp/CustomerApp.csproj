@@ -46,16 +46,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddBasket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddBasket.Designer.cs">
+      <DependentUpon>AddBasket.cs</DependentUpon>
+    </Compile>
     <Compile Include="Authentication.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Authentication.Designer.cs">
       <DependentUpon>Authentication.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditBasket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditBasket.Designer.cs">
+      <DependentUpon>EditBasket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomePage.Designer.cs">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddBasket.resx">
+      <DependentUpon>AddBasket.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Authentication.resx">
       <DependentUpon>Authentication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditBasket.resx">
+      <DependentUpon>EditBasket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomePage.resx">
+      <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -67,6 +94,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Properties\DataSources\WarehouseLibrary.Models.Order.datasource" />
+    <None Include="Properties\DataSources\WarehouseLibrary.Models.Portion.datasource" />
+    <None Include="Properties\DataSources\WarehouseLibrary.Models.Product.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -88,6 +118,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Authentication.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warehouse_products.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Basket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Orders.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

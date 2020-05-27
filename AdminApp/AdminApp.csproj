@@ -52,19 +52,46 @@
     <Compile Include="Authentication.Designer.cs">
       <DependentUpon>Authentication.cs</DependentUpon>
     </Compile>
-    <Compile Include="Home_Page.cs">
+    <Compile Include="NewCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Home_Page.Designer.cs">
-      <DependentUpon>Home_Page.cs</DependentUpon>
+    <Compile Include="NewCustomer.Designer.cs">
+      <DependentUpon>NewCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomePage.Designer.cs">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewPassword.Designer.cs">
+      <DependentUpon>NewPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewSupply.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewSupply.Designer.cs">
+      <DependentUpon>NewSupply.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Authentication.resx">
       <DependentUpon>Authentication.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Home_Page.resx">
-      <DependentUpon>Home_Page.cs</DependentUpon>
+    <EmbeddedResource Include="NewCustomer.resx">
+      <DependentUpon>NewCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomePage.resx">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewPassword.resx">
+      <DependentUpon>NewPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewSupply.resx">
+      <DependentUpon>NewSupply.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -73,6 +100,7 @@
     </EmbeddedResource>
     <None Include="Properties\DataSources\WarehouseLibrary.Models.Customer.datasource" />
     <None Include="Properties\DataSources\WarehouseLibrary.Models.Order.datasource" />
+    <None Include="Properties\DataSources\WarehouseLibrary.Models.Portion.datasource" />
     <None Include="Properties\DataSources\WarehouseLibrary.Models.Product.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -112,6 +140,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Invoices.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Customer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewPassword.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

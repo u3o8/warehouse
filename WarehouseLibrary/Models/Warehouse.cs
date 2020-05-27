@@ -34,14 +34,30 @@ namespace WarehouseLibrary.Models
 
         //Методы.
 
+        //Подтверждение администратора при входе.
+        public bool AuthenticationAdmin(Admin enter)
+        {
+            if (enter.Equals(Admin))
+            {
+                //Назначили текущего пользователя
+                this.UserNow = Admin;
+                return true;
+            }
+            //Если не нашли в нашем списке подходящего пользовтеля, то что-то ввели не так.
+            return false;
+        }
+
+        //Подтверждение пользователя при входе.
         public bool AuthenticationCustomer(Customer enter)
         {
-            //Перебор всех пользовтелей.
+            //Перебор всех пользователей.
             foreach (Customer customer in Customers)
             {
                 //Если пользователь был найден, то происходит вход в учетную запись.
                 if (enter.Equals(customer))
                 {
+                    //Назначили текущего пользователя
+                    this.UserNow = customer;
                     return true;
                 }
             }
@@ -49,19 +65,14 @@ namespace WarehouseLibrary.Models
             return false; 
         }
 
-        public bool AuthenticationAdmin(Admin enter)
-        {
-            if (enter.Equals(Admin))
-            {
-                return true;
-            }
-            //Если не нашли в нашем списке подходящего пользовтеля, то что-то ввели не так.
-            return false; 
-        }
-
-        //Регистрация клиента
+        //Регистрация клиента.
         public void RegistrationCustomer(Customer newCustomer) 
         {
+            //Пользователь не может взять логин администратора.
+            if (newCustomer.Login == "Admin")
+            {
+                throw new LoginException("Invalid login!");
+            }
             //Перебор всех пользователей.
             foreach (Customer customer in Customers) 
             {
@@ -72,10 +83,17 @@ namespace WarehouseLibrary.Models
                 }
             }
             //Если нет такого логина, то спокойно регистрируем пользователя.
+            newCustomer.Orders = new List<Order>();
+            newCustomer.Basket = new List<Portion>();
             Customers.Add(newCustomer); 
         }
 
-        //Учет поставки
+        //Изменение пароля администратора
+        public void ChangeAdminPassword(string newPassword) {
+            Admin.Password = newPassword;
+        }
+
+        //Учет поставки.
         public void AcountingSupply(PurchaseInvoice newSupply) 
         {
             PurchaseInvoices.Add(newSupply);
@@ -85,33 +103,50 @@ namespace WarehouseLibrary.Models
             //тогда нужно будет увеличить количество, а не иметь два разных продукта.
             foreach (Product newProduct in newProducts) 
             {
-                //Указывает, что товара на складе нет.
-                bool key = false; 
-                foreach (Product temp in Products) 
-                {
-                    if (newProduct.Equals(temp))
-                    {
-                        //Указываем, что товар есть на складе,
-                        //данный товар мы уже не будем добавлять.
-                        key = true;
-                        //Если уже имеем данный продукт на складе, 
-                        //то просто меняем количество.
-                        temp.Amount += newProduct.Amount; 
-                        break;
-                    }
-                }
-                if (key == false)
+                if (!newProduct.CheckProduct(Products))
                 {
                     Products.Add(newProduct); 
                 }
             }
         }
 
-        //Создание заказа.
-        public void CreateNewOrder(List<Portion> portionForOrder) 
+        //Составление заказа
+        public void СhooseProduct(Portion newPortion) 
         {
+            List<Portion> portions = ((Customer)UserNow).Basket;
+            foreach (Portion portion in portions)
+            {
+                if ((newPortion.Product).Equals(portion.Product))
+                {
+                    portion.Amount += newPortion.Amount;
+                    return;
+                }
+            }
+            portions.Add(newPortion);
+        }
+
+        //Создание заказа.
+        public void CreateNewOrder() 
+        {
+            List<Portion> portionForOrder = ((Customer)(this.UserNow)).Basket;
             Order newOrder = new Order(portionForOrder, (Customer)UserNow); 
-            Orders.Add(newOrder); 
+            Orders.Add(newOrder);
+            ((Customer)(this.UserNow)).Orders.Add(newOrder);
+        }
+
+        //Удаление заказа.
+        public void DeleteOrder(Order order)
+        {
+            Customer customer = order.Customer;
+            foreach (Order customerOrder in customer.Orders)
+            {
+                if (customerOrder == order)
+                {
+                    customer.Orders.Remove(order);
+                    break;
+                }
+            }
+            Orders.Remove(order);
         }
 
         public void Сonfirmation_of_order(Order targetOrder)

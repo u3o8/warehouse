@@ -10,4 +10,7 @@ C:\Users\38099\Desktop\Warehouse\AdminApp\obj\Debug\AdminApp.csproj.CopyComplete
 C:\Users\38099\Desktop\Warehouse\AdminApp\obj\Debug\AdminApp.exe
 C:\Users\38099\Desktop\Warehouse\AdminApp\obj\Debug\AdminApp.pdb
 C:\Users\38099\Desktop\Warehouse\AdminApp\obj\Debug\AdminApp.Authentication.resources
-C:\Users\38099\Desktop\Warehouse\AdminApp\obj\Debug\AdminApp.Home_Page.resources
+C:\Users\38099\Desktop\Warehouse\AdminApp\obj\Debug\AdminApp.NewCustomer.resources
+C:\Users\38099\Desktop\Warehouse\AdminApp\obj\Debug\AdminApp.HomePage.resources
+C:\Users\38099\Desktop\Warehouse\AdminApp\obj\Debug\AdminApp.NewSupply.resources
+C:\Users\38099\Desktop\Warehouse\AdminApp\obj\Debug\AdminApp.NewPassword.resources

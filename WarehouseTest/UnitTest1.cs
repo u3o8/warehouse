@@ -24,7 +24,8 @@ namespace WarehouseTest
                     Id = i,
                     Name = $"Product{i}",
                     Price = i * 10,
-                    Unit = "kg"
+                    Unit = "kg",
+                    DateTime = DateTime.Now
                 };
                 //После этого создаю саму порцию
                 testPortions.Add(new Portion()
@@ -67,8 +68,9 @@ namespace WarehouseTest
                     Id = 12345678,
                     Name = $"Product 34",
                     Price = 228,
-                    Unit = "kg"
-                };
+                    Unit = "kg",
+                    DateTime = DateTime.Now,
+    };
                 //После этого создаю саму порцию
                 testPortions.Add(new Portion()
                 {
@@ -88,14 +90,18 @@ namespace WarehouseTest
         public void TestNewUsers()
         {
             Warehouse warehouse = new Warehouse();
+            //warehouse.Save();
+            //warehouse.Load();
             const int n = 7;
             for (int i = 0; i < n; i++)
                 warehouse.RegistrationCustomer(new Customer() 
                 { 
                     Login = $"Customer{i}", 
                     Password = "123", 
-                    Adress = "234@cust.com" 
+                    Adress = "naukova 53" 
                 });
+            //warehouse.Save();
+            //warehouse.Load();
             Assert.AreEqual("Customer6", warehouse.Customers[6].Login);
             Assert.AreEqual("Customer2", warehouse.Customers[2].Login);
             Assert.AreEqual("123", warehouse.Customers[0].Password);
@@ -113,7 +119,7 @@ namespace WarehouseTest
                 { 
                     Login = $"Login", 
                     Password = "123", 
-                    Adress = "l@cust.com" 
+                    Adress = "pushkinskaya 22" 
                 });
         }
 
@@ -128,10 +134,9 @@ namespace WarehouseTest
                 {
                     Login = $"Customer{i}",
                     Password = "123",
-                    Adress = "234@cust.com"
+                    Adress = "saltovskaya 33"
                 });
             }
-
             Assert.IsTrue(warehouse.AuthenticationCustomer(new Customer()
             { 
                 Login = "Customer0", 

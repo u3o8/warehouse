@@ -73,6 +73,16 @@ namespace AdminApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Customer {
+            get {
+                object obj = ResourceManager.GetObject("Customer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Customers {
             get {
                 object obj = ResourceManager.GetObject("Customers", resourceCulture);
@@ -86,6 +96,16 @@ namespace AdminApp.Properties {
         internal static System.Drawing.Bitmap Invoices {
             get {
                 object obj = ResourceManager.GetObject("Invoices", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NewPassword {
+            get {
+                object obj = ResourceManager.GetObject("NewPassword", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

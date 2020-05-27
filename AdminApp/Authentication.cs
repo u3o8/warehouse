@@ -33,9 +33,9 @@ namespace AdminApp
             //Проверяем
             if (warehouse.AuthenticationAdmin(temp_admin))
             {
-                Home_Page Home_Page = new Home_Page(warehouse);
+                HomePage homePage = new HomePage(warehouse);
                 //Отображаем главное меню
-                Home_Page.Show();
+                homePage.Show();
                 //Скрываем аутентификацию
                 this.Hide();
             }
