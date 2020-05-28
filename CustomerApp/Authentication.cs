@@ -43,5 +43,15 @@ namespace CustomerApp
                 MessageBox.Show("You have entered your password or account name incorrectly. Please check your password and account name and try again.", "Authentication");
             }
         }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void passwordButton_Click(object sender, EventArgs e)
+        {
+            passwordTextBox.UseSystemPasswordChar = !passwordTextBox.UseSystemPasswordChar;
+        }
     }
 }

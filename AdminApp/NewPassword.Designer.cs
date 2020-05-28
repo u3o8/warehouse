@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.confirmButton = new System.Windows.Forms.Button();
             this.newPasswordTextBox = new System.Windows.Forms.TextBox();
             this.newPasswordLabel = new System.Windows.Forms.Label();
@@ -35,8 +36,13 @@
             this.currentPasswordTextBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.passwordLabel = new System.Windows.Forms.Label();
+            this.newPasswordButton = new System.Windows.Forms.Button();
+            this.currentPasswordButton = new System.Windows.Forms.Button();
             this.passwordPictureBox = new System.Windows.Forms.PictureBox();
+            this.messagePictureBox = new System.Windows.Forms.PictureBox();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.passwordPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.messagePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // confirmButton
@@ -60,6 +66,7 @@
             this.newPasswordTextBox.Name = "newPasswordTextBox";
             this.newPasswordTextBox.Size = new System.Drawing.Size(308, 38);
             this.newPasswordTextBox.TabIndex = 40;
+            this.newPasswordTextBox.UseSystemPasswordChar = true;
             // 
             // newPasswordLabel
             // 
@@ -91,6 +98,7 @@
             this.currentPasswordTextBox.Name = "currentPasswordTextBox";
             this.currentPasswordTextBox.Size = new System.Drawing.Size(308, 38);
             this.currentPasswordTextBox.TabIndex = 37;
+            this.currentPasswordTextBox.UseSystemPasswordChar = true;
             // 
             // button1
             // 
@@ -103,6 +111,7 @@
             this.button1.TabIndex = 41;
             this.button1.Text = "Cancel";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // passwordLabel
             // 
@@ -115,6 +124,30 @@
             this.passwordLabel.TabIndex = 42;
             this.passwordLabel.Text = "New Password";
             // 
+            // newPasswordButton
+            // 
+            this.newPasswordButton.BackColor = System.Drawing.SystemColors.Info;
+            this.newPasswordButton.BackgroundImage = global::AdminApp.Properties.Resources.Password;
+            this.newPasswordButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.newPasswordButton.Location = new System.Drawing.Point(582, 164);
+            this.newPasswordButton.Name = "newPasswordButton";
+            this.newPasswordButton.Size = new System.Drawing.Size(38, 38);
+            this.newPasswordButton.TabIndex = 45;
+            this.newPasswordButton.UseVisualStyleBackColor = false;
+            this.newPasswordButton.Click += new System.EventHandler(this.newPasswordButton_Click);
+            // 
+            // currentPasswordButton
+            // 
+            this.currentPasswordButton.BackColor = System.Drawing.SystemColors.Info;
+            this.currentPasswordButton.BackgroundImage = global::AdminApp.Properties.Resources.Password;
+            this.currentPasswordButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.currentPasswordButton.Location = new System.Drawing.Point(582, 100);
+            this.currentPasswordButton.Name = "currentPasswordButton";
+            this.currentPasswordButton.Size = new System.Drawing.Size(38, 38);
+            this.currentPasswordButton.TabIndex = 44;
+            this.currentPasswordButton.UseVisualStyleBackColor = false;
+            this.currentPasswordButton.Click += new System.EventHandler(this.currentPasswordButton_Click);
+            // 
             // passwordPictureBox
             // 
             this.passwordPictureBox.Image = global::AdminApp.Properties.Resources.NewPassword;
@@ -125,12 +158,40 @@
             this.passwordPictureBox.TabIndex = 43;
             this.passwordPictureBox.TabStop = false;
             // 
+            // messagePictureBox
+            // 
+            this.messagePictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.messagePictureBox.Image = global::AdminApp.Properties.Resources.Message;
+            this.messagePictureBox.Location = new System.Drawing.Point(559, 24);
+            this.messagePictureBox.Name = "messagePictureBox";
+            this.messagePictureBox.Size = new System.Drawing.Size(45, 45);
+            this.messagePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.messagePictureBox.TabIndex = 46;
+            this.messagePictureBox.TabStop = false;
+            this.toolTip.SetToolTip(this.messagePictureBox, "The login must be no shorter than three characters and no longer than sixteen. \r\n" +
+        "Password must be no shorter than six characters and no longer than fourteen.\r\nOn" +
+        "ly letters and numbers are allowed.\r\n");
+            // 
+            // toolTip
+            // 
+            this.toolTip.AutomaticDelay = 23;
+            this.toolTip.AutoPopDelay = 999999999;
+            this.toolTip.InitialDelay = 23;
+            this.toolTip.IsBalloon = true;
+            this.toolTip.ReshowDelay = 4;
+            this.toolTip.ShowAlways = true;
+            this.toolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Warning;
+            this.toolTip.ToolTipTitle = "Warning";
+            // 
             // NewPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
-            this.ClientSize = new System.Drawing.Size(600, 330);
+            this.ClientSize = new System.Drawing.Size(636, 339);
+            this.Controls.Add(this.messagePictureBox);
+            this.Controls.Add(this.newPasswordButton);
+            this.Controls.Add(this.currentPasswordButton);
             this.Controls.Add(this.passwordPictureBox);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.button1);
@@ -140,8 +201,10 @@
             this.Controls.Add(this.currentPasswordTextBox);
             this.Controls.Add(this.confirmButton);
             this.Name = "NewPassword";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NewPassword";
             ((System.ComponentModel.ISupportInitialize)(this.passwordPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.messagePictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,5 +219,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.PictureBox passwordPictureBox;
+        private System.Windows.Forms.Button currentPasswordButton;
+        private System.Windows.Forms.Button newPasswordButton;
+        private System.Windows.Forms.PictureBox messagePictureBox;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }

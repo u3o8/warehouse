@@ -25,6 +25,7 @@ namespace AdminApp
         {
             try
             {
+                warehouse.CheckPassword(newPasswordTextBox.Text);
                 warehouse.ChangePassword(currentPasswordTextBox.Text, newPasswordTextBox.Text);
                 this.Close();
             }
@@ -32,6 +33,21 @@ namespace AdminApp
             {
                 MessageBox.Show(ex.Message, "Exception");
             }
+        }
+
+        private void currentPasswordButton_Click(object sender, EventArgs e)
+        {
+            currentPasswordTextBox.UseSystemPasswordChar = !currentPasswordTextBox.UseSystemPasswordChar;
+        }
+
+        private void newPasswordButton_Click(object sender, EventArgs e)
+        {
+            newPasswordTextBox.UseSystemPasswordChar = !newPasswordTextBox.UseSystemPasswordChar;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

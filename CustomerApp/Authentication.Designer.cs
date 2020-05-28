@@ -30,10 +30,11 @@
         {
             this.okButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.loginLabel = new System.Windows.Forms.Label();
             this.loginTextBox = new System.Windows.Forms.TextBox();
+            this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.passwordButton = new System.Windows.Forms.Button();
             this.authenticationPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.authenticationPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -62,15 +63,7 @@
             this.cancelButton.TabIndex = 11;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = false;
-            // 
-            // passwordTextBox
-            // 
-            this.passwordTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.passwordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTextBox.Location = new System.Drawing.Point(209, 159);
-            this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(308, 38);
-            this.passwordTextBox.TabIndex = 10;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // passwordLabel
             // 
@@ -103,6 +96,28 @@
             this.loginTextBox.Size = new System.Drawing.Size(308, 38);
             this.loginTextBox.TabIndex = 7;
             // 
+            // passwordTextBox
+            // 
+            this.passwordTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.passwordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordTextBox.Location = new System.Drawing.Point(209, 159);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.Size = new System.Drawing.Size(308, 38);
+            this.passwordTextBox.TabIndex = 22;
+            this.passwordTextBox.UseSystemPasswordChar = true;
+            // 
+            // passwordButton
+            // 
+            this.passwordButton.BackColor = System.Drawing.SystemColors.Info;
+            this.passwordButton.BackgroundImage = global::CustomerApp.Properties.Resources.Password;
+            this.passwordButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.passwordButton.Location = new System.Drawing.Point(525, 159);
+            this.passwordButton.Name = "passwordButton";
+            this.passwordButton.Size = new System.Drawing.Size(38, 38);
+            this.passwordButton.TabIndex = 23;
+            this.passwordButton.UseVisualStyleBackColor = false;
+            this.passwordButton.Click += new System.EventHandler(this.passwordButton_Click);
+            // 
             // authenticationPictureBox
             // 
             this.authenticationPictureBox.Image = global::CustomerApp.Properties.Resources.Authentication;
@@ -118,11 +133,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
-            this.ClientSize = new System.Drawing.Size(575, 340);
+            this.ClientSize = new System.Drawing.Size(595, 352);
+            this.Controls.Add(this.passwordButton);
+            this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.authenticationPictureBox);
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.cancelButton);
-            this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.loginLabel);
             this.Controls.Add(this.loginTextBox);
@@ -140,11 +156,12 @@
 
         private System.Windows.Forms.Button okButton;
         private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.Label loginLabel;
         private System.Windows.Forms.TextBox loginTextBox;
         private System.Windows.Forms.PictureBox authenticationPictureBox;
+        private System.Windows.Forms.Button passwordButton;
+        private System.Windows.Forms.TextBox passwordTextBox;
     }
 }
 

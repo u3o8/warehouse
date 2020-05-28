@@ -30,15 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.orderGrid = new System.Windows.Forms.DataGridView();
-            this.orderLabel = new System.Windows.Forms.Label();
-            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.orderLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.portionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nameProductDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.portionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.okButton = new System.Windows.Forms.Button();
             this.productLabel = new System.Windows.Forms.Label();
             this.idNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -80,21 +80,6 @@
             this.orderGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.orderGrid_CellClick);
             this.orderGrid.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.orderGrid_RowPostPaint);
             // 
-            // orderLabel
-            // 
-            this.orderLabel.AutoSize = true;
-            this.orderLabel.Font = new System.Drawing.Font("Calibri", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orderLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(16)))), ((int)(((byte)(37)))));
-            this.orderLabel.Location = new System.Drawing.Point(160, 48);
-            this.orderLabel.Name = "orderLabel";
-            this.orderLabel.Size = new System.Drawing.Size(128, 46);
-            this.orderLabel.TabIndex = 40;
-            this.orderLabel.Text = "Orders";
-            // 
-            // orderBindingSource
-            // 
-            this.orderBindingSource.DataSource = typeof(WarehouseLibrary.Models.Order);
-            // 
             // Order
             // 
             this.Order.HeaderText = "Order";
@@ -111,6 +96,21 @@
             this.dateTimeDataGridViewTextBoxColumn.Name = "dateTimeDataGridViewTextBoxColumn";
             this.dateTimeDataGridViewTextBoxColumn.ReadOnly = true;
             this.dateTimeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // orderBindingSource
+            // 
+            this.orderBindingSource.DataSource = typeof(WarehouseLibrary.Models.Order);
+            // 
+            // orderLabel
+            // 
+            this.orderLabel.AutoSize = true;
+            this.orderLabel.Font = new System.Drawing.Font("Calibri", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(16)))), ((int)(((byte)(37)))));
+            this.orderLabel.Location = new System.Drawing.Point(160, 48);
+            this.orderLabel.Name = "orderLabel";
+            this.orderLabel.Size = new System.Drawing.Size(128, 46);
+            this.orderLabel.TabIndex = 40;
+            this.orderLabel.Text = "Orders";
             // 
             // label1
             // 
@@ -142,10 +142,6 @@
             this.dataGridView1.TabIndex = 41;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // portionBindingSource
-            // 
-            this.portionBindingSource.DataSource = typeof(WarehouseLibrary.Models.Portion);
-            // 
             // nameProductDataGridViewTextBoxColumn
             // 
             this.nameProductDataGridViewTextBoxColumn.DataPropertyName = "NameProduct";
@@ -163,6 +159,10 @@
             this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
             this.amountDataGridViewTextBoxColumn.ReadOnly = true;
             this.amountDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // portionBindingSource
+            // 
+            this.portionBindingSource.DataSource = typeof(WarehouseLibrary.Models.Portion);
             // 
             // okButton
             // 
@@ -338,6 +338,7 @@
             this.Controls.Add(this.orderLabel);
             this.Controls.Add(this.orderGrid);
             this.Name = "History";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "History";
             ((System.ComponentModel.ISupportInitialize)(this.orderGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();

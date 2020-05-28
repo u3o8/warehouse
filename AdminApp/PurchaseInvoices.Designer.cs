@@ -31,8 +31,13 @@
             this.components = new System.ComponentModel.Container();
             this.invoiceGrid = new System.Windows.Forms.DataGridView();
             this.Invoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purchaseInvoiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.invoiceLabel = new System.Windows.Forms.Label();
             this.portionGrid = new System.Windows.Forms.DataGridView();
+            this.nameProductDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.portionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productLabel = new System.Windows.Forms.Label();
             this.idNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.amountNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -45,18 +50,13 @@
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.nameLabel = new System.Windows.Forms.Label();
             this.currentProductLabel = new System.Windows.Forms.Label();
-            this.nameProductDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.portionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dateTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.purchaseInvoiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.invoiceGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.purchaseInvoiceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.portionGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.portionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.idNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.amountNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.priceNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.portionBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.purchaseInvoiceBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // invoiceGrid
@@ -87,6 +87,19 @@
             this.Invoice.ReadOnly = true;
             this.Invoice.Width = 125;
             // 
+            // dateTimeDataGridViewTextBoxColumn
+            // 
+            this.dateTimeDataGridViewTextBoxColumn.DataPropertyName = "DateTime";
+            this.dateTimeDataGridViewTextBoxColumn.HeaderText = "DateTime";
+            this.dateTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dateTimeDataGridViewTextBoxColumn.Name = "dateTimeDataGridViewTextBoxColumn";
+            this.dateTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateTimeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // purchaseInvoiceBindingSource
+            // 
+            this.purchaseInvoiceBindingSource.DataSource = typeof(WarehouseLibrary.Models.PurchaseInvoice);
+            // 
             // invoiceLabel
             // 
             this.invoiceLabel.AutoSize = true;
@@ -116,6 +129,28 @@
             this.portionGrid.Size = new System.Drawing.Size(313, 315);
             this.portionGrid.TabIndex = 12;
             this.portionGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.portionGrid_CellClick);
+            // 
+            // nameProductDataGridViewTextBoxColumn
+            // 
+            this.nameProductDataGridViewTextBoxColumn.DataPropertyName = "NameProduct";
+            this.nameProductDataGridViewTextBoxColumn.HeaderText = "NameProduct";
+            this.nameProductDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameProductDataGridViewTextBoxColumn.Name = "nameProductDataGridViewTextBoxColumn";
+            this.nameProductDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameProductDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // amountDataGridViewTextBoxColumn
+            // 
+            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
+            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
+            this.amountDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
+            this.amountDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // portionBindingSource
+            // 
+            this.portionBindingSource.DataSource = typeof(WarehouseLibrary.Models.Portion);
             // 
             // productLabel
             // 
@@ -266,41 +301,6 @@
             this.currentProductLabel.TabIndex = 44;
             this.currentProductLabel.Text = "Current Product:";
             // 
-            // nameProductDataGridViewTextBoxColumn
-            // 
-            this.nameProductDataGridViewTextBoxColumn.DataPropertyName = "NameProduct";
-            this.nameProductDataGridViewTextBoxColumn.HeaderText = "NameProduct";
-            this.nameProductDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nameProductDataGridViewTextBoxColumn.Name = "nameProductDataGridViewTextBoxColumn";
-            this.nameProductDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameProductDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // amountDataGridViewTextBoxColumn
-            // 
-            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
-            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
-            this.amountDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
-            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
-            this.amountDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // portionBindingSource
-            // 
-            this.portionBindingSource.DataSource = typeof(WarehouseLibrary.Models.Portion);
-            // 
-            // dateTimeDataGridViewTextBoxColumn
-            // 
-            this.dateTimeDataGridViewTextBoxColumn.DataPropertyName = "DateTime";
-            this.dateTimeDataGridViewTextBoxColumn.HeaderText = "DateTime";
-            this.dateTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dateTimeDataGridViewTextBoxColumn.Name = "dateTimeDataGridViewTextBoxColumn";
-            this.dateTimeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dateTimeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // purchaseInvoiceBindingSource
-            // 
-            this.purchaseInvoiceBindingSource.DataSource = typeof(WarehouseLibrary.Models.PurchaseInvoice);
-            // 
             // PurchaseInvoices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -323,14 +323,15 @@
             this.Controls.Add(this.invoiceLabel);
             this.Controls.Add(this.invoiceGrid);
             this.Name = "PurchaseInvoices";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PurchasesSales";
             ((System.ComponentModel.ISupportInitialize)(this.invoiceGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.purchaseInvoiceBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.portionGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.portionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.idNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.amountNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.priceNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.portionBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.purchaseInvoiceBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

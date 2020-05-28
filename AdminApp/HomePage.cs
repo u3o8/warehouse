@@ -57,19 +57,30 @@ namespace AdminApp
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            var toDel = (Customer)customerBindingSource.Current;
-            if (toDel != null)
+            try
             {
-                var res = MessageBox.Show("Are you sure you want to delete this customer?", "Delete", MessageBoxButtons.YesNo);
-                switch (res)
+                if (warehouse.Customers.Count == 0)
                 {
-                    case DialogResult.Yes:
-                        warehouse.Customers.Remove(toDel);
-                        customerBindingSource.ResetBindings(false);
-                        break;
-                    case DialogResult.No:
-                        break;
+                    throw new CustomerException("Nothing to delete");
                 }
+                var toDel = (Customer)customerBindingSource.Current;
+                if (toDel != null)
+                {
+                    var res = MessageBox.Show("Are you sure you want to delete this customer?", "Delete", MessageBoxButtons.YesNo);
+                    switch (res)
+                    {
+                        case DialogResult.Yes:
+                            warehouse.Customers.Remove(toDel);
+                            customerBindingSource.ResetBindings(false);
+                            break;
+                        case DialogResult.No:
+                            break;
+                    }
+                }
+            }
+            catch (CustomerException ex)
+            {
+                MessageBox.Show(ex.Message, "Exception");
             }
         }
 

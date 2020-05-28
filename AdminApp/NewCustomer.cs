@@ -33,6 +33,8 @@ namespace AdminApp
             };
             try
             {
+                warehouse.CheckPassword(passwordTextBox.Text);
+                warehouse.CheckLogin(loginTextBox.Text);
                 warehouse.RegistrationCustomer(newCustomer);
                 customerBindingSource.ResetBindings(false);
                 this.Close();

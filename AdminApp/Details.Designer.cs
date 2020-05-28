@@ -262,6 +262,7 @@
             this.Controls.Add(this.orderLabel);
             this.Controls.Add(this.productGrid);
             this.Name = "Details";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Details";
             ((System.ComponentModel.ISupportInitialize)(this.productGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.portionBindingSource)).EndInit();

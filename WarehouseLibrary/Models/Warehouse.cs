@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 using WarehouseLibrary.DAL;
 using WarehouseLibrary.My_Exceptions;
 
@@ -127,6 +128,64 @@ namespace WarehouseLibrary.Models
             }
         }
 
+        public void CheckPassword(string password) 
+        {
+            if (password.Length < 6)
+            {
+                throw new PasswordException("Your password is too short");
+            }
+            if (password.Length > 14)
+            {
+                throw new PasswordException("Your password is too long");
+            }
+            //Регулярное выражение
+            //Буквальный строковый литерал + начало + включение + конец
+            string pattern = @"^[A-Za-z0-9]+$";
+            Regex regular = new Regex(pattern);
+            if (!regular.IsMatch(password))
+            {
+                throw new PasswordException("You entered invalid characters");
+            }
+        }
+
+        public void CheckLogin(string password)
+        {
+            if (password.Length < 3)
+            {
+                throw new LoginException("Your login is too short");
+            }
+            if (password.Length > 16)
+            {
+                throw new LoginException("Your login is too long");
+            }
+            //Регулярное выражение
+            //Буквальный строковый литерал + начало + включение + конец
+            string pattern = @"^[A-Za-z0-9]+$";
+            Regex regular = new Regex(pattern);
+            if (!regular.IsMatch(password))
+            {
+                throw new LoginException("You entered invalid characters");
+            }
+        }
+
+
+        public void AddBasket(Product product, double amount) 
+        {
+            foreach (Portion portion in ((Customer)UserNow).Basket)
+            {
+                if (product.Equals(portion.Product))
+                {
+                    portion.Amount += amount;
+                    return;
+                }
+            }
+            ((Customer)UserNow).Basket.Add(new Portion()
+            {
+                Product = product,
+                Amount = amount,
+            });
+        }
+
         //Составление заказа
         public void СhooseProduct(Portion newPortion) 
         {
@@ -225,7 +284,14 @@ namespace WarehouseLibrary.Models
             DeleteOrder(targetOrder); 
         }
 
-
+        public decimal GetTotal() {
+            decimal total = 0;
+            foreach (Portion portion in ((Customer)UserNow).Basket)
+            {
+                total += (decimal)portion.Amount * portion.Product.Price;
+            }
+            return total;
+        }
 
         public void Save()
         {

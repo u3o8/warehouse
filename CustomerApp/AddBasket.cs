@@ -22,11 +22,7 @@ namespace CustomerApp
 
         protected override void confirmButton_Click(object sender, EventArgs e)
         {
-            ((Customer)(warehouse.UserNow)).Basket.Add(new Portion()
-            {
-                Product = product,
-                Amount = (double)amountNumericUpDown.Value
-            });
+            warehouse.AddBasket(product, (double)amountNumericUpDown.Value);
             base.confirmButton_Click(sender, e);
         }
     }

@@ -140,6 +140,7 @@
             this.Controls.Add(this.currentPasswordTextBox);
             this.Controls.Add(this.confirmButton);
             this.Name = "NewPassword";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NewPassword";
             ((System.ComponentModel.ISupportInitialize)(this.passwordPictureBox)).EndInit();
             this.ResumeLayout(false);

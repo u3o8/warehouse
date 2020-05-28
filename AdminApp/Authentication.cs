@@ -50,5 +50,10 @@ namespace AdminApp
         {
             this.Close();
         }
+
+        private void passwordButton_Click(object sender, EventArgs e)
+        {
+            passwordTextBox.UseSystemPasswordChar = !passwordTextBox.UseSystemPasswordChar;
+        }
     }
 }

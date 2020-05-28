@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WarehouseLibrary.Models;
+using WarehouseLibrary.My_Exceptions;
 
 namespace AdminApp
 {
@@ -49,18 +50,29 @@ namespace AdminApp
 
         private void confirmButton_Click(object sender, EventArgs e)
         {
-            List<Portion> tempPortions = new List<Portion>();
-            foreach (Product product in tempProducts)
+            try
             {
-                tempPortions.Add(new Portion()
+                if (tempProducts.Count == 0)
                 {
-                    Product = product,
-                    Amount = product.Amount,
-                });
+                    throw new SupplyException("No products in supply");
+                }
+                List<Portion> tempPortions = new List<Portion>();
+                foreach (Product product in tempProducts)
+                {
+                    tempPortions.Add(new Portion()
+                    {
+                        Product = product,
+                        Amount = product.Amount,
+                    });
+                }
+                warehouse.AcountingSupply(new PurchaseInvoice(tempPortions));
+                productBindingSource.ResetBindings(false);
+                this.Close();
             }
-            warehouse.AcountingSupply(new PurchaseInvoice(tempPortions));
-            productBindingSource.ResetBindings(false);
-            this.Close();
+            catch (SupplyException ex)
+            {
+                MessageBox.Show(ex.Message, "Exception");
+            }
         }
     }
 }

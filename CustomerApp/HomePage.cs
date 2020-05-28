@@ -59,16 +59,50 @@ namespace CustomerApp
 
         private void editBasketButton_Click(object sender, EventArgs e)
         {
-            var toEditPortion = (Portion)portionBindingSource.Current;
-            EditBasket editBasket = new EditBasket(warehouse, toEditPortion, portionBindingSource);
-            editBasket.ShowDialog();
+            try
+            {
+                if (((Customer)(warehouse.UserNow)).Basket.Count == 0)
+                {
+                    throw new OrderException("Nothing to edit");
+                }
+                var toEditPortion = (Portion)portionBindingSource.Current;
+                EditBasket editBasket = new EditBasket(warehouse, toEditPortion, portionBindingSource);
+                editBasket.ShowDialog();
+            }
+            catch (OrderException ex)
+            {
+                MessageBox.Show(ex.Message, "Exception");
+            }
         }
 
         private void deleteBasketButton_Click(object sender, EventArgs e)
         {
-            var toDeletePortion = (Portion)portionBindingSource.Current;
-            ((Customer)(warehouse.UserNow)).Basket.Remove(toDeletePortion);
-            portionBindingSource.ResetBindings(false);
+            try
+            {
+                if (((Customer)(warehouse.UserNow)).Basket.Count == 0)
+                {
+                    throw new OrderException("Nothing to delete");
+                }
+                var toDeletePortion = (Portion)portionBindingSource.Current;
+                if (toDeletePortion != null)
+                {
+                    var res = MessageBox.Show("Are you sure you want to delete this product?", "Delete", MessageBoxButtons.YesNo);
+                    switch (res)
+                    {
+                        case DialogResult.Yes:
+                            ((Customer)(warehouse.UserNow)).Basket.Remove(toDeletePortion);
+                            portionBindingSource.ResetBindings(false);
+                            break;
+                        case DialogResult.No:
+                            break;
+                    }
+                }
+            }
+            catch (OrderException ex)
+            {
+                MessageBox.Show(ex.Message, "Exception");
+            }
+
         }
 
         private void orderGrid_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
@@ -84,6 +118,15 @@ namespace CustomerApp
                 {
                     throw new OrderException("There are no products in the basket");
                 }
+                decimal total = warehouse.GetTotal();
+                var res = MessageBox.Show("Total price: " + total + "\n" + "Do you want to make an order?", "Order", MessageBoxButtons.YesNo);
+                switch (res)
+                {
+                    case DialogResult.Yes:
+                        break;
+                    case DialogResult.No:
+                        throw new OrderException("Order cancellation");
+                }
                 warehouse.CreateNewOrder();
                 portionBindingSource.DataSource = ((Customer)warehouse.UserNow).Basket;
                 orderBindingSource.ResetBindings(false);
@@ -96,9 +139,31 @@ namespace CustomerApp
 
         private void deleteOrderButton_Click(object sender, EventArgs e)
         {
-            var toDeleteOrder = (Order)orderBindingSource.Current;
-            warehouse.DeleteOrder(toDeleteOrder);
-            orderBindingSource.ResetBindings(false);
+            try
+            {
+                if (((Customer)(warehouse.UserNow)).Orders.Count == 0)
+                {
+                    throw new OrderException("Nothing to delete");
+                }
+                var toDeleteOrder = (Order)orderBindingSource.Current;
+                if (toDeleteOrder != null)
+                {
+                    var res = MessageBox.Show("Are you sure you want to delete this order?", "Delete", MessageBoxButtons.YesNo);
+                    switch (res)
+                    {
+                        case DialogResult.Yes:
+                            warehouse.DeleteOrder(toDeleteOrder);
+                            orderBindingSource.ResetBindings(false);
+                            break;
+                        case DialogResult.No:
+                            break;
+                    }
+                }
+            }
+            catch (OrderException ex)
+            {
+                MessageBox.Show(ex.Message, "Exception");
+            }
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
