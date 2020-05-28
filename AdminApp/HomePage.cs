@@ -85,23 +85,6 @@ namespace AdminApp
             newPassword.ShowDialog();
         }
 
-        private void purchaseInvoicesButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (warehouse.PurchaseInvoices.Count == 0)
-                {
-                    throw new InvoiceException("No purchase invoices");
-                }
-                PurchaseInvoices purchaseInvoice = new PurchaseInvoices(warehouse);
-                purchaseInvoice.ShowDialog();
-            }
-            catch (InvoiceException ex)
-            {
-                MessageBox.Show(ex.Message, "Exception");
-            }
-        }
-
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             warehouse.Save();
@@ -159,6 +142,27 @@ namespace AdminApp
             }
         }
 
-        
+        private void purchaseInvoicesButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (warehouse.PurchaseInvoices.Count == 0)
+                {
+                    throw new InvoiceException("No purchase invoices");
+                }
+                PurchaseInvoices purchaseInvoice = new PurchaseInvoices(warehouse);
+                purchaseInvoice.ShowDialog();
+            }
+            catch (InvoiceException ex)
+            {
+                MessageBox.Show(ex.Message, "Exception");
+            }
+        }
+
+        private void inventoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Inventory inventory = new Inventory(warehouse, productBindingSource);
+            inventory.ShowDialog();
+        }
     }
 }

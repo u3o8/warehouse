@@ -11,29 +11,22 @@ using WarehouseLibrary.Models;
 
 namespace CustomerApp
 {
-    public partial class EditBasket : Form
+    public partial class EditBasket : ProductWindow
     {
-        Warehouse warehouse;
         Portion portion;
-        BindingSource portionBindingSource;
-        public EditBasket(Warehouse warehouse, Portion portion, BindingSource portionBindingSource)
+        public EditBasket(Warehouse warehouse, Portion portion, BindingSource portionBindingSource) : base(warehouse, portion.Product, portionBindingSource)
         {
             InitializeComponent();
-            this.warehouse = warehouse;
+            textLabel.Text = "Edit product";
             this.portion = portion;
-            this.portionBindingSource = portionBindingSource;
-            nameTextBox.Text = portion.Product.Name;
-            idNumericUpDown.Value = portion.Product.Id;
-            unitTextBox.Text = portion.Product.Unit;
-            priceNumericUpDown.Value = portion.Product.Price;
             amountNumericUpDown.Value = (decimal)portion.Amount;
         }
 
-        private void confirmButton_Click(object sender, EventArgs e)
+        protected override void confirmButton_Click(object sender, EventArgs e)
         {
             portion.Amount = (double)amountNumericUpDown.Value;
-            portionBindingSource.ResetBindings(false);
-            this.Close();
+            base.confirmButton_Click(sender, e);
         }
     }
 }
+

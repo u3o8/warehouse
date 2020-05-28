@@ -32,6 +32,7 @@ namespace WarehouseLibrary.Models
         public List<PurchaseInvoice> PurchaseInvoices { private set; get; }
         public List<Order> Orders { private set; get; }
 
+
         //Методы.
 
         //Подтверждение администратора при входе.
@@ -148,6 +149,7 @@ namespace WarehouseLibrary.Models
             Order newOrder = new Order(portionForOrder, (Customer)UserNow); 
             Orders.Add(newOrder);
             ((Customer)(this.UserNow)).Orders.Add(newOrder);
+            ((Customer)(this.UserNow)).Basket = new List<Portion>();
         }
 
         //Удаление заказа.
@@ -222,6 +224,8 @@ namespace WarehouseLibrary.Models
             //Удаляем заказ, т.к. мы его обслужили.
             DeleteOrder(targetOrder); 
         }
+
+
 
         public void Save()
         {

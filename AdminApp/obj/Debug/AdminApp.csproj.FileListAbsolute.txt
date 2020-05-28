@@ -15,5 +15,6 @@ C:\Users\38099\Desktop\Warehouse\AdminApp\obj\Debug\AdminApp.HomePage.resources
 C:\Users\38099\Desktop\Warehouse\AdminApp\obj\Debug\AdminApp.NewSupply.resources
 C:\Users\38099\Desktop\Warehouse\AdminApp\obj\Debug\AdminApp.NewPassword.resources
 C:\Users\38099\Desktop\Warehouse\AdminApp\obj\Debug\AdminApp.Details.resources
-C:\Users\38099\Desktop\Warehouse\AdminApp\obj\Debug\AdminApp.PurchaseInvoices.resources
 C:\Users\38099\Desktop\Warehouse\AdminApp\obj\Debug\AdminApp.SalesInvoices.resources
+C:\Users\38099\Desktop\Warehouse\AdminApp\obj\Debug\AdminApp.Inventory.resources
+C:\Users\38099\Desktop\Warehouse\AdminApp\obj\Debug\AdminApp.PurchaseInvoices.resources
