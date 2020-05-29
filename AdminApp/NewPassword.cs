@@ -28,7 +28,6 @@ namespace AdminApp
         {
             try
             {
-                warehouse.CheckPassword(newPasswordTextBox.Text);
                 warehouse.ChangePassword(currentPasswordTextBox.Text, newPasswordTextBox.Text);
                 this.Close();
             }

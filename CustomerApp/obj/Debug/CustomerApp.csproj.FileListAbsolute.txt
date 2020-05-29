@@ -11,7 +11,7 @@ C:\Users\38099\Desktop\Warehouse\CustomerApp\bin\Debug\WarehouseLibrary.pdb
 C:\Users\38099\Desktop\Warehouse\CustomerApp\obj\Debug\CustomerApp.Authentication.resources
 C:\Users\38099\Desktop\Warehouse\CustomerApp\obj\Debug\CustomerApp.csproj.CopyComplete
 C:\Users\38099\Desktop\Warehouse\CustomerApp\obj\Debug\CustomerApp.HomePage.resources
-C:\Users\38099\Desktop\Warehouse\CustomerApp\obj\Debug\CustomerApp.NewPassword.resources
 C:\Users\38099\Desktop\Warehouse\CustomerApp\obj\Debug\CustomerApp.ProductWindow.resources
 C:\Users\38099\Desktop\Warehouse\CustomerApp\obj\Debug\CustomerApp.AboutOrder.resources
 C:\Users\38099\Desktop\Warehouse\CustomerApp\obj\Debug\CustomerApp.History.resources
+C:\Users\38099\Desktop\Warehouse\CustomerApp\obj\Debug\CustomerApp.EditBasket.resources

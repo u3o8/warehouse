@@ -183,12 +183,6 @@ namespace CustomerApp
             warehouse.Save();
         }
 
-        // Нажатие на кнопку Change Password в меню.
-        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            NewPassword newPassword = new NewPassword(warehouse);
-            newPassword.ShowDialog();
-        }
 
         // Нажатие на кнопку checkHistoryButton.
         private void checkHistoryButton_Click(object sender, EventArgs e)

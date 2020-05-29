@@ -72,10 +72,13 @@ namespace WarehouseLibrary.Models
         // Метод для регистрации клиента.
         public void RegistrationCustomer(Customer newCustomer) 
         {
+
+            CheckPassword(newCustomer.Password);
+            CheckLogin(newCustomer.Login);
             // Пользователь не может взять логин администратора.
             if (newCustomer.Login == Admin.Login)
             {
-                throw new LoginException("Invalid login!");
+                throw new LoginException("Invalid login! This login already exists.");
             }
 
             // Перебор всех пользователей.
@@ -84,7 +87,7 @@ namespace WarehouseLibrary.Models
                 // Если нашли данный логин, то он занят.
                 if (customer.Login == newCustomer.Login) 
                 {
-                    throw new LoginException("Invalid login!");
+                    throw new LoginException("Invalid login! This login already exists.");
                 }
             }
 
@@ -98,6 +101,7 @@ namespace WarehouseLibrary.Models
         // Метод для изменения пароля администратора.
         public void ChangePassword(string currentPassword, string newPassword) 
         {
+            CheckPassword(newPassword);
             if (Admin.Password == currentPassword)
             {
                 if (Admin.Password != newPassword)
