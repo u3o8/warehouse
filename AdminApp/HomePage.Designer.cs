@@ -155,6 +155,7 @@
             this.orderGrid.RowTemplate.Height = 24;
             this.orderGrid.Size = new System.Drawing.Size(351, 439);
             this.orderGrid.TabIndex = 12;
+            this.orderGrid.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.orderGrid_RowPostPaint);
             // 
             // customersLabel
             // 

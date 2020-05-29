@@ -19,8 +19,8 @@ namespace WarehouseLibrary.Models
             // Стандартный логин и пароль админа.
             Admin = new Admin()
             {
-                Login = "admin",
-                Password = "admin",
+                Login = "admin1",
+                Password = "admin1",
             };
 
             Products = new List<Product>();
@@ -274,6 +274,15 @@ namespace WarehouseLibrary.Models
                     // Находим продукт в списке.
                     if (targetCheckProduct.Equals(product_warehouse)) 
                     {
+                        // Если продукт заканчивается, то удаляем его.
+                        // Сравнение double небезопасно из-за плавающей запятой и представления в памяти,
+                        // поэтому применим данный подход. 
+                        // Ввод Amount до первого числа после запятой, поэтому сравниваем относительно 0.1
+                        if (Math.Abs(product_warehouse.Amount - targetCheckProduct.Amount) < 0.1)
+                        {
+                            Products.Remove(product_warehouse);
+                        }
+
                         // Изменяем количество.
                         product_warehouse.Amount -= targetCheckProduct.Amount;
                         break;

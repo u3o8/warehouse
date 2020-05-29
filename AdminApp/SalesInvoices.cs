@@ -45,7 +45,7 @@ namespace AdminApp
         // Нажатие на ячейку в сетке invoiceGrid.
         private void invoiceGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            portionBindingSource.DataSource = ((PurchaseInvoice)salesInvoiceBindingSource.Current).Portions;
+            portionBindingSource.DataSource = ((SalesInvoice)salesInvoiceBindingSource.Current).Portions;
             GetInfo();
         }
 

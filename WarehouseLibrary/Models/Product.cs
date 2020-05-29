@@ -49,6 +49,8 @@ namespace WarehouseLibrary.Models
                     // то просто меняем количество.
                     temp.Amount += this.Amount;
 
+                    //И дату последнего завоза
+                    temp.DateTime = this.DateTime;
                     // Указываем, что товар есть на складе,
                     // данный товар мы уже не будем добавлять.
                     return true;

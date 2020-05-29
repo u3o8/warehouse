@@ -21,7 +21,7 @@ namespace CustomerApp
             InitializeComponent();
             this.warehouse = warehouse;
             orderBindingSource.DataSource = ( (Customer) warehouse.UserNow).History;
-            portionBindingSource.DataSource = orderBindingSource.Current;
+            portionBindingSource.DataSource = ((Order)orderBindingSource.Current).Portions;
             GetInfo();
         }
 
@@ -45,7 +45,7 @@ namespace CustomerApp
         // Нажатие на ячейку в сетке orderGrid.
         private void orderGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            portionBindingSource.DataSource = orderBindingSource.Current;
+            portionBindingSource.DataSource = ((Order)orderBindingSource.Current).Portions;
             GetInfo();
         }
 

@@ -32,23 +32,38 @@ namespace AdminApp
         // Действие при нажатии на кнопку addButton.
         private void addButton_Click(object sender, EventArgs e)
         {
-            Product product = new Product()
+            try
             {
-                Name = nameTextBox.Text,
-                Id = (int)idNumericUpDown.Value,
-                Unit = unitTextBox.Text,
-                Price = priceNumericUpDown.Value,
-                Amount = (double)amountNumericUpDown.Value
-            };
+                if ((Math.Floor((double)amountNumericUpDown.Value * 10) / 10) == 0)
+                {
+                    throw new SupplyException("Enter amount");
+                }
+                if ((Math.Floor(priceNumericUpDown.Value * 100) / 100) == 0)
+                {
+                    throw new SupplyException("Enter price");
+                }
+                Product product = new Product()
+                {
+                    Name = nameTextBox.Text,
+                    Id = (int)idNumericUpDown.Value,
+                    Unit = unitTextBox.Text,
+                    Price = Math.Floor(priceNumericUpDown.Value * 100)/ 100,
+                    Amount = Math.Floor((double)amountNumericUpDown.Value * 10) / 10,
+                    DateTime = DateTime.Now
+                };
 
-            //Проверка на наличие в поставке
-            if (!product.CheckProduct(tempProducts))
-            {
-                tempProducts.Add(product);
+                //Проверка на наличие в поставке
+                if (!product.CheckProduct(tempProducts))
+                {
+                    tempProducts.Add(product);
+                }
+
+                tempProductBindingSource.ResetBindings(false);
             }
-
-            tempProductBindingSource.ResetBindings(false);
-
+            catch (SupplyException ex)
+            {
+                MessageBox.Show(ex.Message, "Exception");
+            }
         }
 
         // Действие при нажатии на кнопку confirmButton.
