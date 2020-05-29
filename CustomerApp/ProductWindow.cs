@@ -33,6 +33,7 @@ namespace CustomerApp
             priceNumericUpDown.Value = product.Price;
         }
 
+        // Действие при нажатии на кнопку confirmButton.
         protected virtual void confirmButton_Click(object sender, EventArgs e)
         {
             portionBindingSource.ResetBindings(false);

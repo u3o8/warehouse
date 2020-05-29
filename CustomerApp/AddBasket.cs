@@ -11,6 +11,8 @@ using WarehouseLibrary.Models;
 
 namespace CustomerApp
 {
+    // Форма для добавления товара в корзину.
+    //
     public partial class AddBasket : ProductWindow
     {
         public AddBasket(Warehouse warehouse, Product product, BindingSource portionBindingSource) : base(warehouse, product, portionBindingSource)
@@ -20,6 +22,7 @@ namespace CustomerApp
             amountNumericUpDown.Value = 0;
         }
 
+        // Действие при нажатии на кнопку confirmButton.
         protected override void confirmButton_Click(object sender, EventArgs e)
         {
             warehouse.AddBasket(product, (double)amountNumericUpDown.Value);

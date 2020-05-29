@@ -35,7 +35,7 @@
             this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.orderLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.productGrid = new System.Windows.Forms.DataGridView();
             this.nameProductDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.portionBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -53,7 +53,7 @@
             this.nameLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.orderGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.portionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.idNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.amountNumericUpDown)).BeginInit();
@@ -123,24 +123,24 @@
             this.label1.TabIndex = 42;
             this.label1.Text = "Products";
             // 
-            // dataGridView1
+            // productGrid
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productGrid.AllowUserToAddRows = false;
+            this.productGrid.AllowUserToDeleteRows = false;
+            this.productGrid.AutoGenerateColumns = false;
+            this.productGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameProductDataGridViewTextBoxColumn,
             this.amountDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.portionBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(463, 112);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(392, 450);
-            this.dataGridView1.TabIndex = 41;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.productGrid.DataSource = this.portionBindingSource;
+            this.productGrid.Location = new System.Drawing.Point(463, 112);
+            this.productGrid.Name = "productGrid";
+            this.productGrid.ReadOnly = true;
+            this.productGrid.RowHeadersWidth = 51;
+            this.productGrid.RowTemplate.Height = 24;
+            this.productGrid.Size = new System.Drawing.Size(392, 450);
+            this.productGrid.TabIndex = 41;
+            this.productGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productGrid_CellClick);
             // 
             // nameProductDataGridViewTextBoxColumn
             // 
@@ -334,7 +334,7 @@
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.productGrid);
             this.Controls.Add(this.orderLabel);
             this.Controls.Add(this.orderGrid);
             this.Name = "History";
@@ -342,7 +342,7 @@
             this.Text = "History";
             ((System.ComponentModel.ISupportInitialize)(this.orderGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.portionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.idNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.amountNumericUpDown)).EndInit();
@@ -360,7 +360,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Order;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView productGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameProductDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource portionBindingSource;

@@ -11,6 +11,8 @@ using WarehouseLibrary.Models;
 
 namespace CustomerApp
 {
+    // Форма для редактирования товара в корзине.
+    //
     public partial class EditBasket : ProductWindow
     {
         Portion portion;
@@ -22,6 +24,7 @@ namespace CustomerApp
             amountNumericUpDown.Value = (decimal)portion.Amount;
         }
 
+        // Действие при нажатии на кнопку confirmButton.
         protected override void confirmButton_Click(object sender, EventArgs e)
         {
             portion.Amount = (double)amountNumericUpDown.Value;

@@ -11,6 +11,8 @@ using WarehouseLibrary.Models;
 
 namespace CustomerApp
 {
+    // Форма для вывода информации о заказе.
+    //
     public partial class AboutOrder : Form
     {
         Warehouse warehouse;
@@ -24,11 +26,13 @@ namespace CustomerApp
             GetInfo();
         }
 
+        // Нажатие на ячейку в сетке productGrid.
         private void productGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             GetInfo();
         }
 
+        // Метод для вывода дополнительной информации.
         private void GetInfo()
         {
             Portion portion = (Portion)portionBindingSource.Current;
@@ -39,7 +43,7 @@ namespace CustomerApp
             amountNumericUpDown.Value = (decimal)portion.Amount;
         }
 
-
+        // Действие при нажатии на кнопку okButton.
         private void okButton_Click(object sender, EventArgs e)
         {
             this.Close();

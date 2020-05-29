@@ -12,6 +12,8 @@ using WarehouseLibrary.My_Exceptions;
 
 namespace CustomerApp
 {
+    // Форма главной страницы.
+    //
     public partial class HomePage : Form
     {
         Warehouse warehouse;
@@ -24,6 +26,7 @@ namespace CustomerApp
             orderBindingSource.DataSource = ((Customer)warehouse.UserNow).Orders;
         }
 
+        // Действия до закрытия формы.
         private void HomePage_FormClosing(object sender, FormClosingEventArgs e)
         {
             var res = MessageBox.Show("Save data before exit?", "Exit", MessageBoxButtons.YesNoCancel);
@@ -40,16 +43,19 @@ namespace CustomerApp
             }
         }
 
+        // Действия после закрытия формы.
         private void HomePage_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
 
+        // Нажатие на кнопку Exit в меню.
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        // Нажатие на кнопку addBasketButton.
         private void addBasketButton_Click(object sender, EventArgs e)
         {
             var toAddProduct = (Product)productBindingSource.Current;
@@ -57,6 +63,7 @@ namespace CustomerApp
             addBasket.ShowDialog();
         }
 
+        // Нажатие на кнопку editBasketButton.
         private void editBasketButton_Click(object sender, EventArgs e)
         {
             try
@@ -75,6 +82,7 @@ namespace CustomerApp
             }
         }
 
+        // Нажатие на кнопку deleteBasketButton.
         private void deleteBasketButton_Click(object sender, EventArgs e)
         {
             try
@@ -105,11 +113,13 @@ namespace CustomerApp
 
         }
 
+        // Создание дополнительной колонки в таблице.
         private void orderGrid_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             orderGrid.Rows[e.RowIndex].Cells[0].Value = "Order " + (e.RowIndex + 1).ToString();
         }
 
+        // Нажатие на кнопку confirmButton.
         private void confirmButton_Click(object sender, EventArgs e)
         {
             try
@@ -137,6 +147,7 @@ namespace CustomerApp
             }
         }
 
+        // Нажатие на кнопку deleteOrderButton.
         private void deleteOrderButton_Click(object sender, EventArgs e)
         {
             try
@@ -166,17 +177,20 @@ namespace CustomerApp
             }
         }
 
+        // Нажатие на кнопку Save в меню.
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             warehouse.Save();
         }
 
+        // Нажатие на кнопку Change Password в меню.
         private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewPassword newPassword = new NewPassword(warehouse);
             newPassword.ShowDialog();
         }
 
+        // Нажатие на кнопку checkHistoryButton.
         private void checkHistoryButton_Click(object sender, EventArgs e)
         {
             try
@@ -194,6 +208,7 @@ namespace CustomerApp
             }
         }
 
+        // Нажатие на кнопку aboutButton.
         private void aboutButton_Click(object sender, EventArgs e)
         {
             try
@@ -211,11 +226,13 @@ namespace CustomerApp
             }
         }
 
+        // Нажатие на кнопку Exit в меню.
         private void exitToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        // Нажатие на кнопку About в меню.
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Your login: " + ((Customer)warehouse.UserNow).Login + "\n" +
