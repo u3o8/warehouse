@@ -11,6 +11,8 @@ using WarehouseLibrary.Models;
 
 namespace AdminApp
 {
+    // Форма для получения дополнительной информации о заказе.
+    //
     public partial class Details : Form
     {
         Warehouse warehouse;
@@ -24,11 +26,13 @@ namespace AdminApp
             GetInfo();
         }
 
+        // Действие при нажатии на продукт в нашей сетке. 
         private void productGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             GetInfo();
         }
 
+        // Метод для вывода дополнительной информации.
         private void GetInfo() 
         {
             Portion portion = (Portion)portionBindingSource.Current;

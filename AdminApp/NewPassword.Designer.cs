@@ -34,7 +34,7 @@
             this.newPasswordLabel = new System.Windows.Forms.Label();
             this.currentPasswordLabel = new System.Windows.Forms.Label();
             this.currentPasswordTextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.newPasswordButton = new System.Windows.Forms.Button();
             this.currentPasswordButton = new System.Windows.Forms.Button();
@@ -100,18 +100,18 @@
             this.currentPasswordTextBox.TabIndex = 37;
             this.currentPasswordTextBox.UseSystemPasswordChar = true;
             // 
-            // button1
+            // cancelButton
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Info;
-            this.button1.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(16)))), ((int)(((byte)(37)))));
-            this.button1.Location = new System.Drawing.Point(257, 234);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(139, 62);
-            this.button1.TabIndex = 41;
-            this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.cancelButton.BackColor = System.Drawing.SystemColors.Info;
+            this.cancelButton.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(16)))), ((int)(((byte)(37)))));
+            this.cancelButton.Location = new System.Drawing.Point(257, 234);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(139, 62);
+            this.cancelButton.TabIndex = 41;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = false;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // passwordLabel
             // 
@@ -194,7 +194,7 @@
             this.Controls.Add(this.currentPasswordButton);
             this.Controls.Add(this.passwordPictureBox);
             this.Controls.Add(this.passwordLabel);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.newPasswordTextBox);
             this.Controls.Add(this.newPasswordLabel);
             this.Controls.Add(this.currentPasswordLabel);
@@ -216,7 +216,7 @@
         private System.Windows.Forms.Label newPasswordLabel;
         private System.Windows.Forms.Label currentPasswordLabel;
         private System.Windows.Forms.TextBox currentPasswordTextBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.PictureBox passwordPictureBox;
         private System.Windows.Forms.Button currentPasswordButton;

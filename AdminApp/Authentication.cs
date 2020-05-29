@@ -11,46 +11,55 @@ using WarehouseLibrary.Models;
 
 namespace AdminApp
 {
+    // Форма для аутентификации.
+    //
     public partial class Authentication : Form
     {
-        //Cоздаем магазин
+        // Cоздаем магазин.
         Warehouse warehouse = new Warehouse(); 
         public Authentication()
         {
             InitializeComponent();
-            //Подгружаем данные
+
+            // Подгружаем данные.
             warehouse.Load(); 
         }
 
+        // Нажатие на кнопку okButton.
         private void okButton_Click(object sender, EventArgs e)
         {
-            //Создаем пользователя для проверки его в списке существующих
+            // Создаем пользователя для проверки его в списке существующих.
             Admin temp_admin = new Admin()
             {
                 Login = loginTextBox.Text,
                 Password = passwordTextBox.Text
             };
-            //Проверяем
+
+            // Проверяем.
             if (warehouse.AuthenticationAdmin(temp_admin))
             {
                 HomePage homePage = new HomePage(warehouse);
-                //Отображаем главное меню
+
+                // Отображаем главное меню.
                 homePage.Show();
-                //Скрываем аутентификацию
+
+                // Скрываем аутентификацию.
                 this.Hide();
             }
             else
             {
-                //Выводим сообщение об ошибки ввода
+                // Выводим сообщение об ошибки ввода.
                 MessageBox.Show("You have entered your password or account name incorrectly. Please check your password and account name and try again.", "Authentication");
             }
         }
 
+        // Нажатие на кнопку cancelButton.
         private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        // Нажатие на кнопку passwordButton.
         private void passwordButton_Click(object sender, EventArgs e)
         {
             passwordTextBox.UseSystemPasswordChar = !passwordTextBox.UseSystemPasswordChar;

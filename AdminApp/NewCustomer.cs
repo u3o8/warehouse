@@ -12,6 +12,8 @@ using WarehouseLibrary.My_Exceptions;
 
 namespace AdminApp
 {
+    // Форма добавления пользователя.
+    //
     public partial class NewCustomer : Form
     {
         Warehouse warehouse;
@@ -23,6 +25,7 @@ namespace AdminApp
             this.customerBindingSource = customerBindingSource;
         }
 
+        // Действие при нажатии на кнопку confirmButton.
         private void confirmButton_Click(object sender, EventArgs e)
         {
             Customer newCustomer = new Customer()

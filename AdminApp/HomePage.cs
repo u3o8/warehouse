@@ -12,6 +12,8 @@ using WarehouseLibrary.My_Exceptions;
 
 namespace AdminApp
 {
+    // Форма главной страницы.
+    //
     public partial class HomePage : Form
     {
         Warehouse warehouse;
@@ -24,6 +26,7 @@ namespace AdminApp
             customerBindingSource.DataSource = warehouse.Customers;
         }
 
+        // Действия до закрытия формы.
         private void HomePage_FormClosing(object sender, FormClosingEventArgs e)
         {
             var res = MessageBox.Show("Save data before exit?", "Exit", MessageBoxButtons.YesNoCancel);
@@ -40,21 +43,26 @@ namespace AdminApp
             }
         }
 
+        // Действия после закрытия формы.
         private void HomePage_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
 
+        // Нажатие на кнопку Exit в меню.
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        // Нажатие на кнопку addButton.
         private void addButton_Click(object sender, EventArgs e)
         {
             NewCustomer newCustomer = new NewCustomer(warehouse, customerBindingSource);
             newCustomer.ShowDialog();
         }
 
+        // Нажатие на кнопку deleteButton.
         private void deleteButton_Click(object sender, EventArgs e)
         {
             try
@@ -84,23 +92,27 @@ namespace AdminApp
             }
         }
 
+        // Нажатие на кнопку newSupplyButton.
         private void newSupplyButton_Click(object sender, EventArgs e)
         {
             NewSupply newSupply = new NewSupply(warehouse, productBindingSource);
             newSupply.ShowDialog();
         }
 
+        // Нажатие на кнопку Change Password в меню.
         private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewPassword newPassword = new NewPassword(warehouse);
             newPassword.ShowDialog();
         }
 
+        // Нажатие на кнопку Save в меню.
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             warehouse.Save();
         }
 
+        // Нажатие на кнопку confirmButton.
         private void confirmButton_Click(object sender, EventArgs e)
         {
             try
@@ -118,7 +130,13 @@ namespace AdminApp
             }
             
         }
+        // Создание дополнительной колонки в таблице.
+        private void orderGrid_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            orderGrid.Rows[e.RowIndex].Cells[0].Value = "Order " + (e.RowIndex + 1).ToString();
+        }
 
+        // Нажатие на кнопку detailsButton.
         private void detailsButton_Click(object sender, EventArgs e)
         {
             try
@@ -136,7 +154,8 @@ namespace AdminApp
             }
         }
 
-        private void buttonSalesInvoices_Click(object sender, EventArgs e)
+        // Нажатие на кнопку salesInvoicesButton.
+        private void salesInvoicesButton_Click(object sender, EventArgs e)
         {
             try
             {
@@ -153,6 +172,7 @@ namespace AdminApp
             }
         }
 
+        // Нажатие на кнопку purchaseInvoicesButton.
         private void purchaseInvoicesButton_Click(object sender, EventArgs e)
         {
             try
@@ -170,6 +190,7 @@ namespace AdminApp
             }
         }
 
+        // Нажатие на кнопку Inventory в меню.
         private void inventoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Inventory inventory = new Inventory(warehouse, productBindingSource);

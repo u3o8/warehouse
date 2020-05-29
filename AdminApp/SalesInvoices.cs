@@ -11,6 +11,8 @@ using WarehouseLibrary.Models;
 
 namespace AdminApp
 {
+    // Форма для отображения расходной накладной.
+    //
     public partial class SalesInvoices : Form
     {
         Warehouse warehouse;
@@ -23,6 +25,7 @@ namespace AdminApp
             GetInfo();
         }
 
+        // Метод для вывода дополнительной информации.
         private void GetInfo()
         {
             Portion portion = (Portion)portionBindingSource.Current;
@@ -33,17 +36,20 @@ namespace AdminApp
             amountNumericUpDown.Value = (decimal)portion.Amount;
         }
 
+        // Создание дополнительной колонки в таблице.
         private void invoiceGrid_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             invoiceGrid.Rows[e.RowIndex].Cells[0].Value = "Invoice " + (e.RowIndex + 1).ToString();
         }
 
+        // Нажатие на ячейку в сетке invoiceGrid.
         private void invoiceGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             portionBindingSource.DataSource = ((PurchaseInvoice)salesInvoiceBindingSource.Current).Portions;
             GetInfo();
         }
 
+        // Нажатие на ячейку в сетке portionGrid.
         private void portionGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             GetInfo();

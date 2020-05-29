@@ -4,6 +4,8 @@ using System.Text;
 
 namespace WarehouseLibrary.Models
 {
+    // Приходная накладная - это это коллекция порций + дата.
+    //
     [Serializable]
     public class PurchaseInvoice : Invoice
     {

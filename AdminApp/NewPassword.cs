@@ -12,6 +12,8 @@ using WarehouseLibrary.My_Exceptions;
 
 namespace AdminApp
 {
+    // Форма для изменения пароля.
+    //
     public partial class NewPassword : Form
     {
         Warehouse warehouse;
@@ -21,6 +23,7 @@ namespace AdminApp
             this.warehouse = warehouse;
         }
 
+        // Действие при нажатии на кнопку confirmButton.
         private void confirmButton_Click(object sender, EventArgs e)
         {
             try
@@ -35,17 +38,20 @@ namespace AdminApp
             }
         }
 
+        // Действие при нажатии на кнопку currentPasswordButton.
         private void currentPasswordButton_Click(object sender, EventArgs e)
         {
             currentPasswordTextBox.UseSystemPasswordChar = !currentPasswordTextBox.UseSystemPasswordChar;
         }
 
+        // Действие при нажатии на кнопку newPasswordButton.
         private void newPasswordButton_Click(object sender, EventArgs e)
         {
             newPasswordTextBox.UseSystemPasswordChar = !newPasswordTextBox.UseSystemPasswordChar;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        // Действие при нажатии на кнопку cancelButton.
+        private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }

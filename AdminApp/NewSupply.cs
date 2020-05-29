@@ -12,6 +12,8 @@ using WarehouseLibrary.My_Exceptions;
 
 namespace AdminApp
 {
+    // Форма для создания новой поставки.
+    //
     public partial class NewSupply : Form
     {
         BindingSource productBindingSource;
@@ -27,6 +29,7 @@ namespace AdminApp
             tempProductBindingSource.DataSource = tempProducts;
         }
 
+        // Действие при нажатии на кнопку addButton.
         private void addButton_Click(object sender, EventArgs e)
         {
             Product product = new Product()
@@ -48,6 +51,7 @@ namespace AdminApp
 
         }
 
+        // Действие при нажатии на кнопку confirmButton.
         private void confirmButton_Click(object sender, EventArgs e)
         {
             try

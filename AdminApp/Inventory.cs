@@ -11,6 +11,8 @@ using WarehouseLibrary.Models;
 
 namespace AdminApp
 {
+    // Форма для инвентаризации.
+    //
     public partial class Inventory : Form
     {
         Warehouse warehouse;
@@ -23,11 +25,13 @@ namespace AdminApp
             this.productGridHome = productGridHome;
         }
 
+        // Действие при нажатии на продукт в нашей сетке productGrid. 
         private void productGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             amountNumericUpDown.Value = (decimal)((Product)productBindingSource.Current).Amount;
         }
 
+        // Действие при нажатии на кнопку okButton.
         private void okButton_Click(object sender, EventArgs e)
         {
             ((Product)productBindingSource.Current).Amount = (double)amountNumericUpDown.Value;
@@ -35,6 +39,7 @@ namespace AdminApp
             productGridHome.ResetBindings(false);
         }
 
+        // Действие при нажатии на кнопку confirmButton.
         private void confirmButton_Click(object sender, EventArgs e)
         {
             this.Close();

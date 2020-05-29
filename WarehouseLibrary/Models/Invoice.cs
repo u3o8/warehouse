@@ -4,25 +4,30 @@ using System.Text;
 
 namespace WarehouseLibrary.Models
 {
+    // Накладная - это это коллекция порций + дата.
+    //
     [Serializable]
     public class Invoice
     {
+        // Конструктор.
         public Invoice (List<Portion> portions) 
         {
             Portions = portions;
             DateTime = DateTime.Now;
         }
+
         public DateTime DateTime { set; get; }
         public List<Portion> Portions { set; get; }
 
-        //Методы.
+        // Метод для получения продуктов из накладной.
+        // Возращает соответсвенно продукты.
         public List<Product> GetProductFromInvoice()
         {
-            //В данное место мы поместим наши новые продукты.
+            // В данное место мы поместим наши новые продукты.
             List<Product> newProducts = new List<Product>(); 
             for (int i = 0; i < this.Portions.Count; ++i)
             {
-                //Составляю новые продукты.
+                // Составляю новые продукты.
                 Product temp = new Product()
                 {
                     Name = this.Portions[i].Product.Name,
@@ -36,6 +41,7 @@ namespace WarehouseLibrary.Models
             }
             return newProducts;
         }
+
 
     }
 }

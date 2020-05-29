@@ -16,6 +16,11 @@ namespace CustomerApp
         protected Warehouse warehouse;
         protected BindingSource portionBindingSource;
         protected Product product;
+
+        public ProductWindow()
+        {
+            InitializeComponent();
+        }
         public ProductWindow(Warehouse warehouse, Product product, BindingSource portionBindingSource)
         {
             InitializeComponent();
