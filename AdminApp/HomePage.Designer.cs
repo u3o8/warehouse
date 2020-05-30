@@ -31,9 +31,19 @@
             this.components = new System.ComponentModel.Container();
             this.warehouseProductsLabel = new System.Windows.Forms.Label();
             this.productGrid = new System.Windows.Forms.DataGridView();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ordersLabel = new System.Windows.Forms.Label();
             this.orderGrid = new System.Windows.Forms.DataGridView();
+            this.Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customersLabel = new System.Windows.Forms.Label();
             this.customerGrid = new System.Windows.Forms.DataGridView();
@@ -60,16 +70,7 @@
             this.customersPictureBox = new System.Windows.Forms.PictureBox();
             this.ordersPictureBox = new System.Windows.Forms.PictureBox();
             this.warehouseProductsPictureBox = new System.Windows.Forms.PictureBox();
-            this.Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.productGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderGrid)).BeginInit();
@@ -116,6 +117,60 @@
             this.productGrid.Size = new System.Drawing.Size(581, 439);
             this.productGrid.TabIndex = 10;
             // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // unitDataGridViewTextBoxColumn
+            // 
+            this.unitDataGridViewTextBoxColumn.DataPropertyName = "Unit";
+            this.unitDataGridViewTextBoxColumn.HeaderText = "Unit";
+            this.unitDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.unitDataGridViewTextBoxColumn.Name = "unitDataGridViewTextBoxColumn";
+            this.unitDataGridViewTextBoxColumn.ReadOnly = true;
+            this.unitDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.priceDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // amountDataGridViewTextBoxColumn
+            // 
+            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
+            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
+            this.amountDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
+            this.amountDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // DateTime
+            // 
+            this.DateTime.DataPropertyName = "DateTime";
+            this.DateTime.HeaderText = "Date and time";
+            this.DateTime.MinimumWidth = 6;
+            this.DateTime.Name = "DateTime";
+            this.DateTime.ReadOnly = true;
+            this.DateTime.Width = 125;
+            // 
             // productBindingSource
             // 
             this.productBindingSource.DataSource = typeof(WarehouseLibrary.Models.Product);
@@ -151,6 +206,41 @@
             this.orderGrid.Size = new System.Drawing.Size(351, 439);
             this.orderGrid.TabIndex = 12;
             this.orderGrid.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.orderGrid_RowPostPaint);
+            // 
+            // Order
+            // 
+            this.Order.HeaderText = "Order";
+            this.Order.MinimumWidth = 6;
+            this.Order.Name = "Order";
+            this.Order.ReadOnly = true;
+            this.Order.Width = 125;
+            // 
+            // customerDataGridViewTextBoxColumn
+            // 
+            this.customerDataGridViewTextBoxColumn.DataPropertyName = "CustomerLogin";
+            this.customerDataGridViewTextBoxColumn.HeaderText = "Customer";
+            this.customerDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.customerDataGridViewTextBoxColumn.Name = "customerDataGridViewTextBoxColumn";
+            this.customerDataGridViewTextBoxColumn.ReadOnly = true;
+            this.customerDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // TotalPrice
+            // 
+            this.TotalPrice.DataPropertyName = "TotalPrice";
+            this.TotalPrice.HeaderText = "Total price";
+            this.TotalPrice.MinimumWidth = 6;
+            this.TotalPrice.Name = "TotalPrice";
+            this.TotalPrice.ReadOnly = true;
+            this.TotalPrice.Width = 125;
+            // 
+            // dateTimeDataGridViewTextBoxColumn
+            // 
+            this.dateTimeDataGridViewTextBoxColumn.DataPropertyName = "DateTime";
+            this.dateTimeDataGridViewTextBoxColumn.HeaderText = "Date and time";
+            this.dateTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dateTimeDataGridViewTextBoxColumn.Name = "dateTimeDataGridViewTextBoxColumn";
+            this.dateTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateTimeDataGridViewTextBoxColumn.Width = 125;
             // 
             // orderBindingSource
             // 
@@ -232,6 +322,7 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loadToolStripMenuItem,
             this.saveToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -241,14 +332,14 @@
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(123, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(123, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -417,94 +508,12 @@
             this.warehouseProductsPictureBox.TabIndex = 28;
             this.warehouseProductsPictureBox.TabStop = false;
             // 
-            // Order
+            // loadToolStripMenuItem
             // 
-            this.Order.HeaderText = "Order";
-            this.Order.MinimumWidth = 6;
-            this.Order.Name = "Order";
-            this.Order.ReadOnly = true;
-            this.Order.Width = 125;
-            // 
-            // customerDataGridViewTextBoxColumn
-            // 
-            this.customerDataGridViewTextBoxColumn.DataPropertyName = "CustomerLogin";
-            this.customerDataGridViewTextBoxColumn.HeaderText = "Customer";
-            this.customerDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.customerDataGridViewTextBoxColumn.Name = "customerDataGridViewTextBoxColumn";
-            this.customerDataGridViewTextBoxColumn.ReadOnly = true;
-            this.customerDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // TotalPrice
-            // 
-            this.TotalPrice.DataPropertyName = "TotalPrice";
-            this.TotalPrice.HeaderText = "Total price";
-            this.TotalPrice.MinimumWidth = 6;
-            this.TotalPrice.Name = "TotalPrice";
-            this.TotalPrice.ReadOnly = true;
-            this.TotalPrice.Width = 125;
-            // 
-            // dateTimeDataGridViewTextBoxColumn
-            // 
-            this.dateTimeDataGridViewTextBoxColumn.DataPropertyName = "DateTime";
-            this.dateTimeDataGridViewTextBoxColumn.HeaderText = "Date and time";
-            this.dateTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dateTimeDataGridViewTextBoxColumn.Name = "dateTimeDataGridViewTextBoxColumn";
-            this.dateTimeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dateTimeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // unitDataGridViewTextBoxColumn
-            // 
-            this.unitDataGridViewTextBoxColumn.DataPropertyName = "Unit";
-            this.unitDataGridViewTextBoxColumn.HeaderText = "Unit";
-            this.unitDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.unitDataGridViewTextBoxColumn.Name = "unitDataGridViewTextBoxColumn";
-            this.unitDataGridViewTextBoxColumn.ReadOnly = true;
-            this.unitDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.priceDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // amountDataGridViewTextBoxColumn
-            // 
-            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
-            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
-            this.amountDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
-            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
-            this.amountDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // DateTime
-            // 
-            this.DateTime.DataPropertyName = "DateTime";
-            this.DateTime.HeaderText = "Date and time";
-            this.DateTime.MinimumWidth = 6;
-            this.DateTime.Name = "DateTime";
-            this.DateTime.ReadOnly = true;
-            this.DateTime.Width = 125;
+            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.loadToolStripMenuItem.Text = "Load";
+            this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
             // HomePage
             // 
@@ -596,5 +605,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn customerDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
     }
 }

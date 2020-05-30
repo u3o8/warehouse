@@ -36,25 +36,32 @@ namespace WarehouseLibrary.DAL
         // Метод для загрузки данных.
         public void Load()
         {
-            using (Stream stream = File.OpenRead(filePath))
+            try
             {
-                var serializer = new BinaryFormatter();
-                Warehouse wr = (Warehouse)serializer.Deserialize(stream);
+                using (Stream stream = File.OpenRead(filePath))
+                {
+                    var serializer = new BinaryFormatter();
+                    Warehouse wr = (Warehouse)serializer.Deserialize(stream);
 
-                // Глубокое копирование
-                Copy(wr.Products, warehouse.Products);
-                Copy(wr.Customers, warehouse.Customers);
-                Copy(wr.Orders, warehouse.Orders);
-                Copy(wr.SalesInvoices, warehouse.SalesInvoices);
-                Copy(wr.PurchaseInvoices, warehouse.PurchaseInvoices);
-                warehouse.Admin.Copy(wr.Admin);
+                    // Глубокое копирование
+                    Copy(wr.Products, warehouse.Products);
+                    Copy(wr.Customers, warehouse.Customers);
+                    Copy(wr.Orders, warehouse.Orders);
+                    Copy(wr.SalesInvoices, warehouse.SalesInvoices);
+                    Copy(wr.PurchaseInvoices, warehouse.PurchaseInvoices);
+                    warehouse.Admin.Copy(wr.Admin);
+                }
+
+                // Метод для глубокого копирования.
+                void Copy<T>(List<T> from, List<T> to)
+                {
+                    to.Clear();
+                    to.AddRange(from);
+                }
             }
-
-            // Метод для глубокого копирования.
-            void Copy<T>(List<T> from, List<T> to)
+            catch(FileNotFoundException ex)
             {
-                to.Clear();
-                to.AddRange(from);
+                warehouse = new Warehouse();
             }
         }
 

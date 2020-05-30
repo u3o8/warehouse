@@ -205,5 +205,13 @@ namespace AdminApp
             Inventory inventory = new Inventory(warehouse, productBindingSource);
             inventory.ShowDialog();
         }
+
+        private void loadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            warehouse.Load();
+            productBindingSource.ResetBindings(false);
+            orderBindingSource.ResetBindings(false);
+            customerBindingSource.ResetBindings(false);
+        }
     }
 }

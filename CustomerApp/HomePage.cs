@@ -234,5 +234,13 @@ namespace CustomerApp
                 "If you need to change your login/adress/password - " +
                 "contact administrator");
         }
+
+        private void loadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            warehouse.Load();
+            productBindingSource.ResetBindings(false);
+            orderBindingSource.ResetBindings(false);
+            portionBindingSource.ResetBindings(false);
+        }
     }
 }
