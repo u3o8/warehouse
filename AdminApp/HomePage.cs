@@ -127,6 +127,7 @@ namespace AdminApp
                     case DialogResult.Yes:
                         warehouse.СonfirmationOfOrder((Order)orderBindingSource.Current);
                         orderBindingSource.ResetBindings(false);
+                        productBindingSource.ResetBindings(false);
                         break;
                     case DialogResult.No:
                         break;
