@@ -52,6 +52,7 @@
     <Compile Include="UnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GenerateData.cs" />
+    <Compile Include="GenerateEmpty.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -263,6 +263,9 @@ namespace WarehouseLibrary.Models
             if (key == false)
                 throw new OrderException("Order cannot be approved!");
 
+            //для отчетов
+            targetOrder.DateTime = DateTime.Now;
+
             // Eсли можем одобрить заказ, то создаем накладную.
             SalesInvoices.Add(temp); 
 

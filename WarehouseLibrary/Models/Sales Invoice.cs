@@ -15,6 +15,7 @@ namespace WarehouseLibrary.Models
             TotalPrice = totalPrice;
         }
         Customer Customer { get; set; }
+        string CustomerLogin { get => Customer.Login; }
         public decimal TotalPrice { private set; get; }
 
     }

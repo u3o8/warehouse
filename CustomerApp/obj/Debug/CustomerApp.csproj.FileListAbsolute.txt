@@ -15,3 +15,4 @@ C:\Users\38099\Desktop\Warehouse\CustomerApp\obj\Debug\CustomerApp.ProductWindow
 C:\Users\38099\Desktop\Warehouse\CustomerApp\obj\Debug\CustomerApp.AboutOrder.resources
 C:\Users\38099\Desktop\Warehouse\CustomerApp\obj\Debug\CustomerApp.History.resources
 C:\Users\38099\Desktop\Warehouse\CustomerApp\obj\Debug\CustomerApp.EditBasket.resources
+C:\Users\38099\Desktop\Warehouse\CustomerApp\obj\Debug\AdminApp.SalesInvoices.resources
