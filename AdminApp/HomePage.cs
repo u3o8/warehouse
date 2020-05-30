@@ -121,8 +121,16 @@ namespace AdminApp
                 {
                     throw new OrderException("No orders");
                 }
-                warehouse.СonfirmationOfOrder((Order)orderBindingSource.Current);
-                orderBindingSource.ResetBindings(false);
+                var res = MessageBox.Show("Are you sure you want to confirm this order?", "Confirm", MessageBoxButtons.YesNo);
+                switch (res)
+                {
+                    case DialogResult.Yes:
+                        warehouse.СonfirmationOfOrder((Order)orderBindingSource.Current);
+                        orderBindingSource.ResetBindings(false);
+                        break;
+                    case DialogResult.No:
+                        break;
+                }
             }
             catch (OrderException ex)
             {
