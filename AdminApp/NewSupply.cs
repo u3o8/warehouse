@@ -93,5 +93,34 @@ namespace AdminApp
                 MessageBox.Show(ex.Message, "Exception");
             }
         }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (tempProducts.Count == 0)
+                {
+                    throw new SupplyException("Nothing to delete");
+                }
+                var toDeletePortion = (Product)tempProductBindingSource.Current;
+                if (toDeletePortion != null)
+                {
+                    var res = MessageBox.Show("Are you sure you want to delete this product?", "Delete", MessageBoxButtons.YesNo);
+                    switch (res)
+                    {
+                        case DialogResult.Yes:
+                            tempProducts.Remove(toDeletePortion);
+                            tempProductBindingSource.ResetBindings(false);
+                            break;
+                        case DialogResult.No:
+                            break;
+                    }
+                }
+            }
+            catch (SupplyException ex)
+            {
+                MessageBox.Show(ex.Message, "Exception");
+            }
+        }
     }
 }

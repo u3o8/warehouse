@@ -50,6 +50,7 @@
             this.idNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.supplyLabel = new System.Windows.Forms.Label();
             this.priceNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.deleteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.supplyGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tempProductBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.amountNumericUpDown)).BeginInit();
@@ -146,9 +147,9 @@
             this.addButton.BackColor = System.Drawing.SystemColors.Info;
             this.addButton.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(16)))), ((int)(((byte)(37)))));
-            this.addButton.Location = new System.Drawing.Point(767, 434);
+            this.addButton.Location = new System.Drawing.Point(776, 434);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(139, 62);
+            this.addButton.Size = new System.Drawing.Size(130, 62);
             this.addButton.TabIndex = 25;
             this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = false;
@@ -292,12 +293,26 @@
             this.priceNumericUpDown.Size = new System.Drawing.Size(284, 38);
             this.priceNumericUpDown.TabIndex = 29;
             // 
+            // deleteButton
+            // 
+            this.deleteButton.BackColor = System.Drawing.SystemColors.Info;
+            this.deleteButton.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(16)))), ((int)(((byte)(37)))));
+            this.deleteButton.Location = new System.Drawing.Point(622, 434);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(130, 62);
+            this.deleteButton.TabIndex = 32;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = false;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
             // NewSupply
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(939, 623);
+            this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.idNumericUpDown);
             this.Controls.Add(this.amountNumericUpDown);
             this.Controls.Add(this.priceNumericUpDown);
@@ -350,5 +365,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn unitDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button deleteButton;
     }
 }
