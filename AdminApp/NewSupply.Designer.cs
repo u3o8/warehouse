@@ -67,7 +67,7 @@
             this.newProductLabel.Name = "newProductLabel";
             this.newProductLabel.Size = new System.Drawing.Size(234, 46);
             this.newProductLabel.TabIndex = 14;
-            this.newProductLabel.Text = "New Product:";
+            this.newProductLabel.Text = "New product:";
             // 
             // nameLabel
             // 
@@ -330,7 +330,7 @@
             this.Controls.Add(this.newProductLabel);
             this.Name = "NewSupply";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NewSupply";
+            this.Text = "New Supply";
             ((System.ComponentModel.ISupportInitialize)(this.supplyGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tempProductBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.amountNumericUpDown)).EndInit();

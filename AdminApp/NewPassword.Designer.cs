@@ -75,9 +75,9 @@
             this.newPasswordLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(16)))), ((int)(((byte)(37)))));
             this.newPasswordLabel.Location = new System.Drawing.Point(38, 164);
             this.newPasswordLabel.Name = "newPasswordLabel";
-            this.newPasswordLabel.Size = new System.Drawing.Size(193, 35);
+            this.newPasswordLabel.Size = new System.Drawing.Size(194, 35);
             this.newPasswordLabel.TabIndex = 39;
-            this.newPasswordLabel.Text = "New Password:";
+            this.newPasswordLabel.Text = "New password:";
             // 
             // currentPasswordLabel
             // 
@@ -86,9 +86,9 @@
             this.currentPasswordLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(16)))), ((int)(((byte)(37)))));
             this.currentPasswordLabel.Location = new System.Drawing.Point(5, 100);
             this.currentPasswordLabel.Name = "currentPasswordLabel";
-            this.currentPasswordLabel.Size = new System.Drawing.Size(229, 35);
+            this.currentPasswordLabel.Size = new System.Drawing.Size(230, 35);
             this.currentPasswordLabel.TabIndex = 38;
-            this.currentPasswordLabel.Text = "Current Password:";
+            this.currentPasswordLabel.Text = "Current password:";
             // 
             // currentPasswordTextBox
             // 
@@ -120,9 +120,9 @@
             this.passwordLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(16)))), ((int)(((byte)(37)))));
             this.passwordLabel.Location = new System.Drawing.Point(249, 23);
             this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(251, 46);
+            this.passwordLabel.Size = new System.Drawing.Size(252, 46);
             this.passwordLabel.TabIndex = 42;
-            this.passwordLabel.Text = "New Password";
+            this.passwordLabel.Text = "New password";
             // 
             // newPasswordButton
             // 
@@ -202,7 +202,7 @@
             this.Controls.Add(this.confirmButton);
             this.Name = "NewPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NewPassword";
+            this.Text = "New Password";
             ((System.ComponentModel.ISupportInitialize)(this.passwordPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.messagePictureBox)).EndInit();
             this.ResumeLayout(false);

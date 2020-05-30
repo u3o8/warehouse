@@ -31,11 +31,16 @@
             this.components = new System.ComponentModel.Container();
             this.warehouseProductsLabel = new System.Windows.Forms.Label();
             this.productGrid = new System.Windows.Forms.DataGridView();
-            this.DateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ordersLabel = new System.Windows.Forms.Label();
             this.orderGrid = new System.Windows.Forms.DataGridView();
+            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customersLabel = new System.Windows.Forms.Label();
             this.customerGrid = new System.Windows.Forms.DataGridView();
+            this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,32 +60,27 @@
             this.customersPictureBox = new System.Windows.Forms.PictureBox();
             this.ordersPictureBox = new System.Windows.Forms.PictureBox();
             this.warehouseProductsPictureBox = new System.Windows.Forms.PictureBox();
-            this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.productGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.invoicesPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.warehouseProductsPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // warehouseProductsLabel
@@ -116,14 +116,9 @@
             this.productGrid.Size = new System.Drawing.Size(581, 439);
             this.productGrid.TabIndex = 10;
             // 
-            // DateTime
+            // productBindingSource
             // 
-            this.DateTime.DataPropertyName = "DateTime";
-            this.DateTime.HeaderText = "DateTime";
-            this.DateTime.MinimumWidth = 6;
-            this.DateTime.Name = "DateTime";
-            this.DateTime.ReadOnly = true;
-            this.DateTime.Width = 125;
+            this.productBindingSource.DataSource = typeof(WarehouseLibrary.Models.Product);
             // 
             // ordersLabel
             // 
@@ -157,6 +152,10 @@
             this.orderGrid.TabIndex = 12;
             this.orderGrid.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.orderGrid_RowPostPaint);
             // 
+            // orderBindingSource
+            // 
+            this.orderBindingSource.DataSource = typeof(WarehouseLibrary.Models.Order);
+            // 
             // customersLabel
             // 
             this.customersLabel.AutoSize = true;
@@ -187,6 +186,37 @@
             this.customerGrid.Size = new System.Drawing.Size(348, 200);
             this.customerGrid.TabIndex = 14;
             // 
+            // loginDataGridViewTextBoxColumn
+            // 
+            this.loginDataGridViewTextBoxColumn.DataPropertyName = "Login";
+            this.loginDataGridViewTextBoxColumn.HeaderText = "Login";
+            this.loginDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
+            this.loginDataGridViewTextBoxColumn.ReadOnly = true;
+            this.loginDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // adressDataGridViewTextBoxColumn
+            // 
+            this.adressDataGridViewTextBoxColumn.DataPropertyName = "Adress";
+            this.adressDataGridViewTextBoxColumn.HeaderText = "Adress";
+            this.adressDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.adressDataGridViewTextBoxColumn.Name = "adressDataGridViewTextBoxColumn";
+            this.adressDataGridViewTextBoxColumn.ReadOnly = true;
+            this.adressDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
+            this.passwordDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            this.passwordDataGridViewTextBoxColumn.ReadOnly = true;
+            this.passwordDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataSource = typeof(WarehouseLibrary.Models.Customer);
+            // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -195,7 +225,7 @@
             this.adminToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1448, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1448, 28);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -205,7 +235,7 @@
             this.saveToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // saveToolStripMenuItem
@@ -228,7 +258,7 @@
             this.changePasswordToolStripMenuItem,
             this.inventoryToolStripMenuItem});
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(67, 26);
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
             this.adminToolStripMenuItem.Text = "Admin";
             // 
             // changePasswordToolStripMenuItem
@@ -265,7 +295,7 @@
             this.purchaseInvoicesButton.Name = "purchaseInvoicesButton";
             this.purchaseInvoicesButton.Size = new System.Drawing.Size(348, 57);
             this.purchaseInvoicesButton.TabIndex = 18;
-            this.purchaseInvoicesButton.Text = "Purchase Invoices";
+            this.purchaseInvoicesButton.Text = "Purchase invoices";
             this.purchaseInvoicesButton.UseVisualStyleBackColor = false;
             this.purchaseInvoicesButton.Click += new System.EventHandler(this.purchaseInvoicesButton_Click);
             // 
@@ -278,7 +308,7 @@
             this.salesInvoicesButton.Name = "salesInvoicesButton";
             this.salesInvoicesButton.Size = new System.Drawing.Size(348, 57);
             this.salesInvoicesButton.TabIndex = 19;
-            this.salesInvoicesButton.Text = "Sales Invoices";
+            this.salesInvoicesButton.Text = "Sales invoices";
             this.salesInvoicesButton.UseVisualStyleBackColor = false;
             this.salesInvoicesButton.Click += new System.EventHandler(this.salesInvoicesButton_Click);
             // 
@@ -387,40 +417,40 @@
             this.warehouseProductsPictureBox.TabIndex = 28;
             this.warehouseProductsPictureBox.TabStop = false;
             // 
-            // loginDataGridViewTextBoxColumn
+            // Order
             // 
-            this.loginDataGridViewTextBoxColumn.DataPropertyName = "Login";
-            this.loginDataGridViewTextBoxColumn.HeaderText = "Login";
-            this.loginDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
-            this.loginDataGridViewTextBoxColumn.ReadOnly = true;
-            this.loginDataGridViewTextBoxColumn.Width = 125;
+            this.Order.HeaderText = "Order";
+            this.Order.MinimumWidth = 6;
+            this.Order.Name = "Order";
+            this.Order.ReadOnly = true;
+            this.Order.Width = 125;
             // 
-            // adressDataGridViewTextBoxColumn
+            // customerDataGridViewTextBoxColumn
             // 
-            this.adressDataGridViewTextBoxColumn.DataPropertyName = "Adress";
-            this.adressDataGridViewTextBoxColumn.HeaderText = "Adress";
-            this.adressDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.adressDataGridViewTextBoxColumn.Name = "adressDataGridViewTextBoxColumn";
-            this.adressDataGridViewTextBoxColumn.ReadOnly = true;
-            this.adressDataGridViewTextBoxColumn.Width = 125;
+            this.customerDataGridViewTextBoxColumn.DataPropertyName = "CustomerLogin";
+            this.customerDataGridViewTextBoxColumn.HeaderText = "Customer";
+            this.customerDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.customerDataGridViewTextBoxColumn.Name = "customerDataGridViewTextBoxColumn";
+            this.customerDataGridViewTextBoxColumn.ReadOnly = true;
+            this.customerDataGridViewTextBoxColumn.Width = 125;
             // 
-            // passwordDataGridViewTextBoxColumn
+            // TotalPrice
             // 
-            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
-            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
-            this.passwordDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
-            this.passwordDataGridViewTextBoxColumn.ReadOnly = true;
-            this.passwordDataGridViewTextBoxColumn.Width = 125;
+            this.TotalPrice.DataPropertyName = "TotalPrice";
+            this.TotalPrice.HeaderText = "Total price";
+            this.TotalPrice.MinimumWidth = 6;
+            this.TotalPrice.Name = "TotalPrice";
+            this.TotalPrice.ReadOnly = true;
+            this.TotalPrice.Width = 125;
             // 
-            // customerBindingSource
+            // dateTimeDataGridViewTextBoxColumn
             // 
-            this.customerBindingSource.DataSource = typeof(WarehouseLibrary.Models.Customer);
-            // 
-            // orderBindingSource
-            // 
-            this.orderBindingSource.DataSource = typeof(WarehouseLibrary.Models.Order);
+            this.dateTimeDataGridViewTextBoxColumn.DataPropertyName = "DateTime";
+            this.dateTimeDataGridViewTextBoxColumn.HeaderText = "Date and time";
+            this.dateTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dateTimeDataGridViewTextBoxColumn.Name = "dateTimeDataGridViewTextBoxColumn";
+            this.dateTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateTimeDataGridViewTextBoxColumn.Width = 125;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -467,44 +497,14 @@
             this.amountDataGridViewTextBoxColumn.ReadOnly = true;
             this.amountDataGridViewTextBoxColumn.Width = 125;
             // 
-            // productBindingSource
+            // DateTime
             // 
-            this.productBindingSource.DataSource = typeof(WarehouseLibrary.Models.Product);
-            // 
-            // Order
-            // 
-            this.Order.HeaderText = "Order";
-            this.Order.MinimumWidth = 6;
-            this.Order.Name = "Order";
-            this.Order.ReadOnly = true;
-            this.Order.Width = 125;
-            // 
-            // customerDataGridViewTextBoxColumn
-            // 
-            this.customerDataGridViewTextBoxColumn.DataPropertyName = "CustomerLogin";
-            this.customerDataGridViewTextBoxColumn.HeaderText = "Customer";
-            this.customerDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.customerDataGridViewTextBoxColumn.Name = "customerDataGridViewTextBoxColumn";
-            this.customerDataGridViewTextBoxColumn.ReadOnly = true;
-            this.customerDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // TotalPrice
-            // 
-            this.TotalPrice.DataPropertyName = "TotalPrice";
-            this.TotalPrice.HeaderText = "TotalPrice";
-            this.TotalPrice.MinimumWidth = 6;
-            this.TotalPrice.Name = "TotalPrice";
-            this.TotalPrice.ReadOnly = true;
-            this.TotalPrice.Width = 125;
-            // 
-            // dateTimeDataGridViewTextBoxColumn
-            // 
-            this.dateTimeDataGridViewTextBoxColumn.DataPropertyName = "DateTime";
-            this.dateTimeDataGridViewTextBoxColumn.HeaderText = "DateTime";
-            this.dateTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dateTimeDataGridViewTextBoxColumn.Name = "dateTimeDataGridViewTextBoxColumn";
-            this.dateTimeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dateTimeDataGridViewTextBoxColumn.Width = 125;
+            this.DateTime.DataPropertyName = "DateTime";
+            this.DateTime.HeaderText = "Date and time";
+            this.DateTime.MinimumWidth = 6;
+            this.DateTime.Name = "DateTime";
+            this.DateTime.ReadOnly = true;
+            this.DateTime.Width = 125;
             // 
             // HomePage
             // 
@@ -534,21 +534,21 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "HomePage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "HomePage";
+            this.Text = "Home Page";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HomePage_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HomePage_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.productGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.invoicesPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.warehouseProductsPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -585,13 +585,13 @@
         private System.Windows.Forms.PictureBox ordersPictureBox;
         private System.Windows.Forms.PictureBox customersPictureBox;
         private System.Windows.Forms.PictureBox invoicesPictureBox;
+        private System.Windows.Forms.ToolStripMenuItem inventoryToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateTime;
-        private System.Windows.Forms.ToolStripMenuItem inventoryToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn Order;
         private System.Windows.Forms.DataGridViewTextBoxColumn customerDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;

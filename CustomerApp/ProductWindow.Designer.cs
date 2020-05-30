@@ -228,7 +228,7 @@
             this.Controls.Add(this.nameLabel);
             this.Name = "ProductWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ProductWindow";
+            this.Text = "Product Window";
             ((System.ComponentModel.ISupportInitialize)(this.idNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.amountNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.priceNumericUpDown)).EndInit();

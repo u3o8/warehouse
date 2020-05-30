@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.productGrid = new System.Windows.Forms.DataGridView();
+            this.nameProductDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.portionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.orderLabel = new System.Windows.Forms.Label();
             this.idNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -43,8 +45,6 @@
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.nameLabel = new System.Windows.Forms.Label();
             this.currentProductLabel = new System.Windows.Forms.Label();
-            this.nameProductDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.productGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.portionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.idNumericUpDown)).BeginInit();
@@ -70,6 +70,24 @@
             this.productGrid.Size = new System.Drawing.Size(323, 390);
             this.productGrid.TabIndex = 0;
             this.productGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productGrid_CellClick);
+            // 
+            // nameProductDataGridViewTextBoxColumn
+            // 
+            this.nameProductDataGridViewTextBoxColumn.DataPropertyName = "NameProduct";
+            this.nameProductDataGridViewTextBoxColumn.HeaderText = "Product";
+            this.nameProductDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameProductDataGridViewTextBoxColumn.Name = "nameProductDataGridViewTextBoxColumn";
+            this.nameProductDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameProductDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // amountDataGridViewTextBoxColumn
+            // 
+            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
+            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
+            this.amountDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
+            this.amountDataGridViewTextBoxColumn.Width = 125;
             // 
             // portionBindingSource
             // 
@@ -222,25 +240,7 @@
             this.currentProductLabel.Name = "currentProductLabel";
             this.currentProductLabel.Size = new System.Drawing.Size(282, 46);
             this.currentProductLabel.TabIndex = 32;
-            this.currentProductLabel.Text = "Current Product:";
-            // 
-            // nameProductDataGridViewTextBoxColumn
-            // 
-            this.nameProductDataGridViewTextBoxColumn.DataPropertyName = "NameProduct";
-            this.nameProductDataGridViewTextBoxColumn.HeaderText = "Product";
-            this.nameProductDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nameProductDataGridViewTextBoxColumn.Name = "nameProductDataGridViewTextBoxColumn";
-            this.nameProductDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameProductDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // amountDataGridViewTextBoxColumn
-            // 
-            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
-            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
-            this.amountDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
-            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
-            this.amountDataGridViewTextBoxColumn.Width = 125;
+            this.currentProductLabel.Text = "Current product:";
             // 
             // Details
             // 

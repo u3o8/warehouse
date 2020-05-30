@@ -34,8 +34,6 @@
             this.orderLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.productGrid = new System.Windows.Forms.DataGridView();
-            this.nameProductDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.portionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.okButton = new System.Windows.Forms.Button();
             this.productLabel = new System.Windows.Forms.Label();
@@ -49,6 +47,8 @@
             this.idLabel = new System.Windows.Forms.Label();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.nameLabel = new System.Windows.Forms.Label();
+            this.nameProductDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -127,24 +127,6 @@
             this.productGrid.TabIndex = 41;
             this.productGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productGrid_CellClick);
             // 
-            // nameProductDataGridViewTextBoxColumn
-            // 
-            this.nameProductDataGridViewTextBoxColumn.DataPropertyName = "NameProduct";
-            this.nameProductDataGridViewTextBoxColumn.HeaderText = "NameProduct";
-            this.nameProductDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nameProductDataGridViewTextBoxColumn.Name = "nameProductDataGridViewTextBoxColumn";
-            this.nameProductDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameProductDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // amountDataGridViewTextBoxColumn
-            // 
-            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
-            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
-            this.amountDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
-            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
-            this.amountDataGridViewTextBoxColumn.Width = 125;
-            // 
             // portionBindingSource
             // 
             this.portionBindingSource.DataSource = typeof(WarehouseLibrary.Models.Portion);
@@ -171,7 +153,7 @@
             this.productLabel.Name = "productLabel";
             this.productLabel.Size = new System.Drawing.Size(272, 46);
             this.productLabel.TabIndex = 91;
-            this.productLabel.Text = "Current Product";
+            this.productLabel.Text = "Current product";
             // 
             // idNumericUpDown
             // 
@@ -300,6 +282,24 @@
             this.nameLabel.TabIndex = 81;
             this.nameLabel.Text = "Name:";
             // 
+            // nameProductDataGridViewTextBoxColumn
+            // 
+            this.nameProductDataGridViewTextBoxColumn.DataPropertyName = "NameProduct";
+            this.nameProductDataGridViewTextBoxColumn.HeaderText = "Product";
+            this.nameProductDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameProductDataGridViewTextBoxColumn.Name = "nameProductDataGridViewTextBoxColumn";
+            this.nameProductDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameProductDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // amountDataGridViewTextBoxColumn
+            // 
+            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
+            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
+            this.amountDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
+            this.amountDataGridViewTextBoxColumn.Width = 125;
+            // 
             // Order
             // 
             this.Order.HeaderText = "Order";
@@ -311,7 +311,7 @@
             // TotalPrice
             // 
             this.TotalPrice.DataPropertyName = "TotalPrice";
-            this.TotalPrice.HeaderText = "TotalPrice";
+            this.TotalPrice.HeaderText = "Total price";
             this.TotalPrice.MinimumWidth = 6;
             this.TotalPrice.Name = "TotalPrice";
             this.TotalPrice.ReadOnly = true;
@@ -320,7 +320,7 @@
             // dateTimeDataGridViewTextBoxColumn
             // 
             this.dateTimeDataGridViewTextBoxColumn.DataPropertyName = "DateTime";
-            this.dateTimeDataGridViewTextBoxColumn.HeaderText = "DateTime";
+            this.dateTimeDataGridViewTextBoxColumn.HeaderText = "Date and time";
             this.dateTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dateTimeDataGridViewTextBoxColumn.Name = "dateTimeDataGridViewTextBoxColumn";
             this.dateTimeDataGridViewTextBoxColumn.ReadOnly = true;
@@ -370,8 +370,6 @@
         private System.Windows.Forms.Label orderLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView productGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameProductDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource portionBindingSource;
         private System.Windows.Forms.Button okButton;
         private System.Windows.Forms.Label productLabel;
@@ -388,5 +386,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Order;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameProductDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
     }
 }

@@ -48,8 +48,7 @@ namespace AdminApp
                     Id = (int)idNumericUpDown.Value,
                     Unit = unitTextBox.Text,
                     Price = Math.Floor(priceNumericUpDown.Value * 100)/ 100,
-                    Amount = Math.Floor((double)amountNumericUpDown.Value * 10) / 10,
-                    DateTime = DateTime.Now
+                    Amount = Math.Floor((double)amountNumericUpDown.Value * 10) / 10
                 };
 
                 //Проверка на наличие в поставке
@@ -78,6 +77,7 @@ namespace AdminApp
                 List<Portion> tempPortions = new List<Portion>();
                 foreach (Product product in tempProducts)
                 {
+                    product.DateTime = DateTime.Now;
                     tempPortions.Add(new Portion()
                     {
                         Product = product,

@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.invoiceGrid = new System.Windows.Forms.DataGridView();
-            this.Invoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.purchaseInvoiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.invoiceLabel = new System.Windows.Forms.Label();
             this.portionGrid = new System.Windows.Forms.DataGridView();
+            this.nameProductDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.portionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productLabel = new System.Windows.Forms.Label();
             this.idNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -48,8 +48,8 @@
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.nameLabel = new System.Windows.Forms.Label();
             this.currentProductLabel = new System.Windows.Forms.Label();
-            this.nameProductDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Invoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.purchaseInvoiceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.portionGrid)).BeginInit();
@@ -79,23 +79,6 @@
             this.invoiceGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.invoiceGrid_CellClick);
             this.invoiceGrid.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.invoiceGrid_RowPostPaint);
             // 
-            // Invoice
-            // 
-            this.Invoice.HeaderText = "Invoice";
-            this.Invoice.MinimumWidth = 6;
-            this.Invoice.Name = "Invoice";
-            this.Invoice.ReadOnly = true;
-            this.Invoice.Width = 125;
-            // 
-            // dateTimeDataGridViewTextBoxColumn
-            // 
-            this.dateTimeDataGridViewTextBoxColumn.DataPropertyName = "DateTime";
-            this.dateTimeDataGridViewTextBoxColumn.HeaderText = "DateTime";
-            this.dateTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dateTimeDataGridViewTextBoxColumn.Name = "dateTimeDataGridViewTextBoxColumn";
-            this.dateTimeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dateTimeDataGridViewTextBoxColumn.Width = 125;
-            // 
             // purchaseInvoiceBindingSource
             // 
             this.purchaseInvoiceBindingSource.DataSource = typeof(WarehouseLibrary.Models.PurchaseInvoice);
@@ -107,9 +90,9 @@
             this.invoiceLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(16)))), ((int)(((byte)(37)))));
             this.invoiceLabel.Location = new System.Drawing.Point(62, 19);
             this.invoiceLabel.Name = "invoiceLabel";
-            this.invoiceLabel.Size = new System.Drawing.Size(282, 46);
+            this.invoiceLabel.Size = new System.Drawing.Size(281, 46);
             this.invoiceLabel.TabIndex = 11;
-            this.invoiceLabel.Text = "Purchase Invoice";
+            this.invoiceLabel.Text = "Purchase invoice";
             // 
             // portionGrid
             // 
@@ -129,6 +112,24 @@
             this.portionGrid.Size = new System.Drawing.Size(313, 315);
             this.portionGrid.TabIndex = 12;
             this.portionGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.portionGrid_CellClick);
+            // 
+            // nameProductDataGridViewTextBoxColumn
+            // 
+            this.nameProductDataGridViewTextBoxColumn.DataPropertyName = "NameProduct";
+            this.nameProductDataGridViewTextBoxColumn.HeaderText = "Product";
+            this.nameProductDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameProductDataGridViewTextBoxColumn.Name = "nameProductDataGridViewTextBoxColumn";
+            this.nameProductDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameProductDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // amountDataGridViewTextBoxColumn
+            // 
+            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
+            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
+            this.amountDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
+            this.amountDataGridViewTextBoxColumn.Width = 125;
             // 
             // portionBindingSource
             // 
@@ -281,25 +282,24 @@
             this.currentProductLabel.Name = "currentProductLabel";
             this.currentProductLabel.Size = new System.Drawing.Size(282, 46);
             this.currentProductLabel.TabIndex = 44;
-            this.currentProductLabel.Text = "Current Product:";
+            this.currentProductLabel.Text = "Current product:";
             // 
-            // nameProductDataGridViewTextBoxColumn
+            // Invoice
             // 
-            this.nameProductDataGridViewTextBoxColumn.DataPropertyName = "NameProduct";
-            this.nameProductDataGridViewTextBoxColumn.HeaderText = "Product";
-            this.nameProductDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nameProductDataGridViewTextBoxColumn.Name = "nameProductDataGridViewTextBoxColumn";
-            this.nameProductDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameProductDataGridViewTextBoxColumn.Width = 125;
+            this.Invoice.HeaderText = "Invoice";
+            this.Invoice.MinimumWidth = 6;
+            this.Invoice.Name = "Invoice";
+            this.Invoice.ReadOnly = true;
+            this.Invoice.Width = 125;
             // 
-            // amountDataGridViewTextBoxColumn
+            // dateTimeDataGridViewTextBoxColumn
             // 
-            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
-            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
-            this.amountDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
-            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
-            this.amountDataGridViewTextBoxColumn.Width = 125;
+            this.dateTimeDataGridViewTextBoxColumn.DataPropertyName = "DateTime";
+            this.dateTimeDataGridViewTextBoxColumn.HeaderText = "Date and time";
+            this.dateTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dateTimeDataGridViewTextBoxColumn.Name = "dateTimeDataGridViewTextBoxColumn";
+            this.dateTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateTimeDataGridViewTextBoxColumn.Width = 125;
             // 
             // PurchaseInvoices
             // 
@@ -340,8 +340,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView invoiceGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Invoice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource purchaseInvoiceBindingSource;
         private System.Windows.Forms.Label invoiceLabel;
         private System.Windows.Forms.DataGridView portionGrid;
@@ -360,5 +358,7 @@
         private System.Windows.Forms.Label currentProductLabel;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameProductDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Invoice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateTimeDataGridViewTextBoxColumn;
     }
 }
