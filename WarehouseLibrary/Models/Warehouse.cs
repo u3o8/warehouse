@@ -30,8 +30,8 @@ namespace WarehouseLibrary.Models
             Orders = new List<Order>();
         }
 
+        public User UserNow { set; get; }
         public Admin Admin { private set; get; }
-        public User UserNow { private set; get; }
         public List<Product> Products { private set; get; }
         public List<Customer> Customers { private set; get; }
         public List<SalesInvoice> SalesInvoices { private set; get; }

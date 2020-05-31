@@ -13,3 +13,4 @@ C:\Users\38099\Desktop\Warehouse\WarehouseTest\obj\Debug\WarehouseTest.csprojAss
 C:\Users\38099\Desktop\Warehouse\WarehouseTest\obj\Debug\WarehouseTest.csproj.CopyComplete
 C:\Users\38099\Desktop\Warehouse\WarehouseTest\obj\Debug\WarehouseTest.dll
 C:\Users\38099\Desktop\Warehouse\WarehouseTest\obj\Debug\WarehouseTest.pdb
+C:\Users\38099\Desktop\Warehouse\WarehouseTest\obj\Debug\WarehouseTest.csproj.CoreCompileInputs.cache

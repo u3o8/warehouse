@@ -168,9 +168,8 @@
             this.messagePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.messagePictureBox.TabIndex = 46;
             this.messagePictureBox.TabStop = false;
-            this.toolTip.SetToolTip(this.messagePictureBox, "The login must be no shorter than three characters and no longer than sixteen. \r\n" +
-        "Password must be no shorter than six characters and no longer than fourteen.\r\nOn" +
-        "ly letters and numbers are allowed.\r\n");
+            this.toolTip.SetToolTip(this.messagePictureBox, "Password must be no shorter than six characters and no longer than fourteen.\r\nOnl" +
+        "y letters and numbers are allowed.\r\n");
             // 
             // toolTip
             // 

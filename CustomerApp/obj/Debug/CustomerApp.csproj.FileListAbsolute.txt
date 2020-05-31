@@ -16,3 +16,4 @@ C:\Users\38099\Desktop\Warehouse\CustomerApp\obj\Debug\CustomerApp.AboutOrder.re
 C:\Users\38099\Desktop\Warehouse\CustomerApp\obj\Debug\CustomerApp.History.resources
 C:\Users\38099\Desktop\Warehouse\CustomerApp\obj\Debug\CustomerApp.EditBasket.resources
 C:\Users\38099\Desktop\Warehouse\CustomerApp\obj\Debug\AdminApp.SalesInvoices.resources
+C:\Users\38099\Desktop\Warehouse\CustomerApp\obj\Debug\CustomerApp.csproj.CoreCompileInputs.cache

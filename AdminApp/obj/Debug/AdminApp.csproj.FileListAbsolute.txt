@@ -18,3 +18,4 @@ C:\Users\38099\Desktop\Warehouse\AdminApp\obj\Debug\AdminApp.Details.resources
 C:\Users\38099\Desktop\Warehouse\AdminApp\obj\Debug\AdminApp.SalesInvoices.resources
 C:\Users\38099\Desktop\Warehouse\AdminApp\obj\Debug\AdminApp.Inventory.resources
 C:\Users\38099\Desktop\Warehouse\AdminApp\obj\Debug\AdminApp.PurchaseInvoices.resources
+C:\Users\38099\Desktop\Warehouse\AdminApp\obj\Debug\AdminApp.csproj.CoreCompileInputs.cache
