@@ -36,14 +36,22 @@ namespace AdminApp
             };
             try
             {
-                warehouse.RegistrationCustomer(newCustomer);
-                customerBindingSource.ResetBindings(false);
-                this.Close();
+                try
+                {
+                    warehouse.RegistrationCustomer(newCustomer);
+                    customerBindingSource.ResetBindings(false);
+                    this.Close();
+                }
+                catch (LoginException ex)
+                {
+                    MessageBox.Show(ex.Message, "Exception");
+                }
             }
-            catch (LoginException ex)
+            catch (PasswordException ex)
             {
                 MessageBox.Show(ex.Message, "Exception");
             }
+            
         }
     }
 }
